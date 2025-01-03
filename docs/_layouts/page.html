@@ -1,13 +1,10 @@
 ---
 layout: default
 ---
-<div id="sidebar" class="sidebar">
-    <h3>Proyecto</h3>
-    <ul>
-      <li><a href="#metodo1">Método 1</a></li>
-      <li><a href="#metodo2">Método 2</a></li>
-      <li><a href="#propiedad1">Propiedad 1</a></li>
-      <li><a href="#propiedad2">Propiedad 2</a></li>
-    </ul>
-  </div>
-  
+<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+
+<header>
+  <h1>{{ site.title }}</h1>
+</header>
+
+{% include post_list.html %}
