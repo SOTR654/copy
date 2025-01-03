@@ -29,6 +29,6 @@ GoogleAPI is a module that allows you to make easy calls to Google APIs.
     local GoogleAPI = GoogleModule(script id)
     ```
 
-9. Check the [documentation](./Pages/GoogleAPI.md).
+9. Check the [documentation](./Objects/GoogleAPI.md).
 
 10. Have fun experimenting :)
