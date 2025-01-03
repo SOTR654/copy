@@ -1,29 +1,28 @@
-<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+### [Return to Main](docs/index.md)
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
 Focused on the GoogleSheets API.
 
-## OpenSheets(ID: `string`)
-Method that will open and return the indicated file in the form of an [`Spreadsheet`]() object.
+## OpenSheets
+Method that will open and return the indicated file in the form of an [`Spreadsheet`](Spreadsheet) object.
 
-|   Parameters  |
-|   ----    |
-|   **DocumentID:** string <br> Spreadsheet ID.  |
+<div class="top"><b>Parameters</b></div>
+<div class="info">
+  <b>Spreadsheet:</b> <code><a href="Spreadsheet.md">Spreadsheet</a></code><br>
+    Spreadsheet representing the file
+</div>
+<br>
 
-## Métodos
+<div class="top"><b>Returns</b></div>
+<div class="info">
+  <b>Spreadsheet:</b> <code><a href="Spreadsheet.md">Spreadsheet</a></code><br>
+    Spreadsheet representing the file
+</div>
 
-### Método 1
-<div id="metodo1"></div>
-Descripción del Método 1.
+<br>
+<br>
 
-### Método 2
-<div id="metodo2"></div>
-Descripción del Método 2.
 
-## Propiedades
 
-### Propiedad 1
-<div id="propiedad1"></div>
-Descripción de la Propiedad 1.
 
-### Propiedad 2
-<div id="propiedad2"></div>
-Descripción de la Propiedad 2.
+
