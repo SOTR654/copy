@@ -17,7 +17,7 @@ remote_theme: abhinavs/moonwalk
 theme_config:
   appearance: "auto" # can be "light", "dark" or "auto"
   appearance_toggle: true # if appearance can be switched by user
-  back_home_text: "home.." # customize text for homepage link in page layout
+  back_home_text: "Main" # customize text for homepage link in page layout
   date_format: "%Y-%m-%d" # customize how date is formatted
   
   #show_description: true # show blog description

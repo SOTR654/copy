@@ -1,6 +1,4 @@
----
-layout: page
----
+<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
 Focused on the GoogleSheets API.
 
 ## OpenSheets(ID: `string`)
