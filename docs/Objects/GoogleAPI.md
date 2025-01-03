@@ -1,6 +1,6 @@
----
-layout: page
----
+### [Return to Main](docs/index.md)
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
 Focused on the main module.
 
 ## GoogleSheets
