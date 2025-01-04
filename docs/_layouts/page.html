@@ -13,7 +13,7 @@ layout: default
   </header>
   
   <main>
-    {{ content }}
+    {{ content | replace: "string", "<code>string</code>" }}
   </main>
 
   {% if site.theme_config.show_footer == true %}

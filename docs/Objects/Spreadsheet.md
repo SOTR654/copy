@@ -2,6 +2,8 @@
 layout: page
 Description: "Focused on a GoogleSheets file."
 ---
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
 # Properties
 <span class="readonly">formato de código</span>
 
@@ -12,14 +14,11 @@ Description: "Focused on a GoogleSheets file."
 
 
 <div class="top">
-  DocumentID <code>string</code>
+  DocumentID string
 </div>
 <div class="info">
-  Read-only property, stores the ID of the page that created it
+  Read-onlyStores the ID of the page that created it.
 </div> <br>
-
-### DocumentID `string`
-Read-only property, stores the ID of the page that created it
 
 ### PagesData <code> {[Sheet](Sheet.md)} </code>
 List of [`Sheet`](Sheet.md) ordered by index that contains the file.
