@@ -2,12 +2,6 @@
 layout: page
 Description: "Focused on a GoogleSheets file."
 ---
-___
-
-<br>
-<br>
-
-
 # Properties
 <span class="readonly">formato de código</span>
 
