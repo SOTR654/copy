@@ -32,13 +32,12 @@ Open the specific Sheet object. according to the name.
 <div class="info">
   <b>Name:</b> string
   <br>Page name.
-</div> <br>
-
+</div>
 <div class="top"> Returns </div>
 <div class="info">
   Sheet <br> Represents the requested page.
-</div> <br>
-
+</div>
+<br>
 
 ### CreatesBlankPage
 Create an Sheet without data and that will not be uploaded to the original file, you must use `Submit` to apply the changes.
@@ -47,29 +46,27 @@ Create an Sheet without data and that will not be uploaded to the original file,
 <div class="info">
   <b>Name:</b> string
   <br>Optional parameter for the name of the page, by default it will be called <code>Blank</code> and the current index.
-</div> <br>
-
+</div>
 <div class="top"> Returns </div>
 <div class="info">
   Sheet <br>Represents the requested page.
-</div> <br>
-
+</div>
+<br>
 
 ### RefreshFile
 Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
 
 <div class="top"> Parameters </div>
-<div class="info">  void  </div> <br>
-
+<div class="info">  void  </div>
 <div class="top"> Returns </div>
-<div class="info">  void  </div> <br>
-
+<div class="info">  void  </div>
+<br>
 
 ### SubmitFile
 Upload all the changes of all the pages to the file on the web.
 
 <div class="top"> Parameters </div>
-<div class="info">  void  </div> <br>
-
+<div class="info">  void  </div>
 <div class="top"> Returns </div>
-<div class="info">  void  </div> <br>
+<div class="info">  void  </div>
+<br>
