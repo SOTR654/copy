@@ -4,7 +4,7 @@ layout: home
 GoogleAPI is a module that allows you to make easy calls to Google APIs.
 
 ## Supported services
-* Google Sheets
+* [Google Sheets](./Objects/GoogleSheets.md)
 
 ## Setup
 1. Go to [`Apps Script`](https://script.google.com/home), create a new project and give it a name.
@@ -26,7 +26,7 @@ GoogleAPI is a module that allows you to make easy calls to Google APIs.
 8. Insert the [module]() into your game and use this code replacing the id
     ```lua
     local GoogleModule = require(game:GetService("ServerStorage").GoogleAPI) -- path to module
-    local GoogleAPI = GoogleModule(script id)
+    local GoogleAPI = GoogleModule("AKfycbxZ9Nnz0_vXCIkEViOk6zJm34t_eUjzlUIdtjX0m1rdMzZvwDoq0EaKbf0JA23yyYlLtQ")
     ```
 
 9. Check the [documentation](./Objects/GoogleAPI.md).
