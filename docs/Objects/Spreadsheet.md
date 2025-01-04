@@ -2,14 +2,16 @@
 layout: page
 Description: "Focused on a GoogleSheets file."
 ---
+
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 # Properties
 <span class="readonly">formato de código</span>
 
-
 <code><span style="color:red">read-only
 </span></code>
+
+string
 
 
 
@@ -34,15 +36,13 @@ Open the specific [`Sheet`](Sheet.md) object. according to the name.
 <div class="top"> Parameters </div>
 <div class="info">
   <b>Name:</b> <code>string</code>
-  
-  Page name.
+  <br>Page name.
 </div> <br>
 
 <div class="top"> Returns </div>
 <div class="info">
   <b>Sheet:</b> <code><a href="Sheet.md">Sheet</a></code>
-
-  Sheet that represents the requested page.
+  <br>Sheet that represents the requested page.
 </div> <br>
 
 ### CreatesBlankPage
@@ -56,8 +56,7 @@ Create an [`Sheet`](Sheet.md) without data and that will not be uploaded to the 
 <div class="top"> Returns </div>
 <div class="info">
   <b>Sheet:</b> <code><a href="Sheet.md">Sheet</a></code>
-
-  Sheet that represents the requested page.
+  <br>Sheet that represents the requested page.
 </div> <br>
 
 
