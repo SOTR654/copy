@@ -9,14 +9,14 @@ Description: "Focused on a GoogleSheets file."
 
 <div class="top">
   DocumentID string
-  <br> read-only
 </div>
 <div class="info">
-  Stores the ID of the page that created it.
+  read-only
+  <br> Stores the ID of the page that created it.
 </div> <br>
 
 <div class="top">
-  PagesData Sheet
+  <b>PagesData</b> Sheet
 </div>
 <div class="info">
   List of Sheet ordered by index that contains the file.
@@ -37,8 +37,7 @@ Open the specific Sheet object. according to the name.
 
 <div class="top"> Returns </div>
 <div class="info">
-  <b>Sheet</b>
-  <br>Represents the requested page.
+  Sheet <br> Represents the requested page.
 </div> <br>
 
 ### CreatesBlankPage
@@ -51,8 +50,7 @@ Create an Sheet without data and that will not be uploaded to the original file,
 
 <div class="top"> Returns </div>
 <div class="info">
-  <b>Sheet</b>
-  <br>Represents the requested page.
+  Sheet <br>Represents the requested page.
 </div> <br>
 
 
