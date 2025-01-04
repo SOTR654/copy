@@ -1,8 +1,7 @@
-### [Return to Main](https://sotr654.github.io/copy/)
-<link href="css/styles.css" rel="stylesheet" type="text/css">
-
-Focused on a GoogleSheets file.
-
+---
+layout: page
+Description: "Focused on a GoogleSheets file."
+---
 ___
 
 <br>

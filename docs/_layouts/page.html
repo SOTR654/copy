@@ -1,24 +1,3 @@
----
-layout: default
----
-
-<header>
-{% if site.theme_config.show_navbar == true %}
-  {% include horizontal_list.html collection=site.data.home.navbar_entries %}
-  <div class="dashed"></div>
-{% endif %}
-
-  <h1>{{ site.title }}</h1>
-  {% if site.theme_config.show_description == true %}
-    <p>{{ site.description }}</p>
-  {% endif %}
-</header>
-
-{{ content }}
-
-{% if site.theme_config.show_footer == true %}
-  <footer>
-    <div class="dashed"></div>
-    {% include horizontal_list.html collection=site.data.home.footer_entries %}
-  </footer>
-{% endif %}
+<h3 id="-return-to-main"><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<p>page.Description</p>
