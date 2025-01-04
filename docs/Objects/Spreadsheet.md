@@ -39,7 +39,7 @@ Open the specific Sheet object. according to the name.
 </div>
 <br>
 
-### CreatesBlankPage
+### CreateBlankPage
 Create an Sheet without data and that will not be uploaded to the original file, you must use `Submit` to apply the changes.
 
 <div class="top"> Parameters </div>
