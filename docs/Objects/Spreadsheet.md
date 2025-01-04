@@ -2,7 +2,9 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 Focused on a GoogleSheets file.
+
 ___
+
 <br>
 <br>
 
