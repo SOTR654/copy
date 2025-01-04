@@ -2,7 +2,6 @@
 layout: default
 ---
 <h3 id="-return-to-main"><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
-<link href="css/styles.css" rel="stylesheet" type="text/css">
 
 <body>
   <header>
@@ -13,13 +12,9 @@ layout: default
   </header>
   
   <main>
-    {{ content | replace: "string", "<code>string</code>" }}
+    {{ content
+      | replace: "Sheet", "<a href="https://sotr654.github.io/copy/Objects/Sheet.md"><code>Sheet</code></a>"
+      | replace: "string", "<code>string</code>"
+    }}
   </main>
-
-  {% if site.theme_config.show_footer == true %}
-    <footer>
-      <div class="dashed"></div>
-      {% include horizontal_list.html collection=site.data.home.footer_entries %}
-    </footer>
-  {% endif %}
 </body>

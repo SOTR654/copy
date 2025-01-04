@@ -11,9 +11,6 @@ Description: "Focused on a GoogleSheets file."
 <code><span style="color:red">read-only
 </span></code>
 
-string
-
-
 
 <div class="top">
   DocumentID string
@@ -22,8 +19,12 @@ string
   Read-onlyStores the ID of the page that created it.
 </div> <br>
 
-### PagesData <code> {[Sheet](Sheet.md)} </code>
-List of [`Sheet`](Sheet.md) ordered by index that contains the file.
+<div class="top">
+  PagesData Sheet
+</div>
+<div class="info">
+  List of Sheet ordered by index that contains the file.
+</div> <br>
 
 <br>
 <br>
@@ -31,7 +32,7 @@ List of [`Sheet`](Sheet.md) ordered by index that contains the file.
 # Methods
 
 ### OpenPage
-Open the specific [`Sheet`](Sheet.md) object. according to the name. 
+Open the specific Sheet object. according to the name. 
 
 <div class="top"> Parameters </div>
 <div class="info">
@@ -41,12 +42,12 @@ Open the specific [`Sheet`](Sheet.md) object. according to the name.
 
 <div class="top"> Returns </div>
 <div class="info">
-  <b>Sheet:</b> <code><a href="Sheet.md">Sheet</a></code>
-  <br>Sheet that represents the requested page.
+  <b>Sheet</b>
+  <br>Represents the requested page.
 </div> <br>
 
 ### CreatesBlankPage
-Create an [`Sheet`](Sheet.md) without data and that will not be uploaded to the original file, you must use [`Submit`](Sheet.md) to apply the changes.
+Create an Sheet without data and that will not be uploaded to the original file, you must use `Submit` to apply the changes.
 
 <div class="top"> Parameters </div>
 <div class="info">
@@ -55,8 +56,8 @@ Create an [`Sheet`](Sheet.md) without data and that will not be uploaded to the 
 
 <div class="top"> Returns </div>
 <div class="info">
-  <b>Sheet:</b> <code><a href="Sheet.md">Sheet</a></code>
-  <br>Sheet that represents the requested page.
+  <b>Sheet</b>
+  <br>Represents the requested page.
 </div> <br>
 
 
