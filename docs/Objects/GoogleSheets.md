@@ -6,8 +6,6 @@ Focused on the GoogleSheets API.
 ___
 
 <br>
-<br>
-
 
 # Methods
 

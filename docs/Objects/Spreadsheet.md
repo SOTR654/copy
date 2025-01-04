@@ -6,17 +6,13 @@ Description: "Focused on a GoogleSheets file."
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 # Properties
-<span class="readonly">formato de código</span>
-
-<code><span style="color:red">read-only
-</span></code>
-
 
 <div class="top">
   DocumentID string
+  <br> read-only
 </div>
 <div class="info">
-  Read-onlyStores the ID of the page that created it.
+  Stores the ID of the page that created it.
 </div> <br>
 
 <div class="top">
@@ -26,7 +22,6 @@ Description: "Focused on a GoogleSheets file."
   List of Sheet ordered by index that contains the file.
 </div> <br>
 
-<br>
 <br>
 
 # Methods
