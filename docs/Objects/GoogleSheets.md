@@ -14,14 +14,14 @@ ___
 ### OpenSheets
 Method that will open and return the indicated file in the form of an [`Spreadsheet`](Spreadsheet.md) object.
 
-<div class="top"><b>Parameters</b></div>
+<div class="top"> Parameters </div>
 <div class="info">
   <b>DocumentID:</b> <code>string</code><br>
     ID of the Spreadsheet to open.
 </div>
 <br>
 
-<div class="top"><b>Returns</b></div>
+<div class="top"> Returns </div>
 <div class="info">
   <b>Spreadsheet:</b> <code><a href="Spreadsheet.md">Spreadsheet</a></code><br>
     Spreadsheet representing the file.

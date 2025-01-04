@@ -1,9 +1,14 @@
 .top {
-    background-color: #454649;
+    background-color: #3d3e41;
     color: white;
     padding: 10px 15px;
+    font-weight: bold;
 }
 .info {
     padding: 10px 15px;
     color: white;
+}
+.readonly {
+    font-family: "Courier New", Courier, monospace; /* Fuente de estilo código */
+    color: red; /* Color rojo */
 }
