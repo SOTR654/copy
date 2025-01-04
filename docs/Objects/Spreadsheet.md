@@ -1,6 +1,6 @@
 ---
 layout: page
-Description: "Focused on a GoogleSheets file."
+description: "Focused on a GoogleSheets file."
 ---
 
 <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -13,14 +13,13 @@ Description: "Focused on a GoogleSheets file."
 <div class="info">
   read-only
   <br> Stores the ID of the page that created it.
-</div> <br>
-
+</div>
 <div class="top">
   <b>PagesData</b> Sheet
 </div>
 <div class="info">
   List of Sheet ordered by index that contains the file.
-</div> <br>
+</div>
 
 <br>
 
@@ -31,7 +30,7 @@ Open the specific Sheet object. according to the name.
 
 <div class="top"> Parameters </div>
 <div class="info">
-  <b>Name:</b> <code>string</code>
+  <b>Name:</b> string
   <br>Page name.
 </div> <br>
 
@@ -40,12 +39,14 @@ Open the specific Sheet object. according to the name.
   Sheet <br> Represents the requested page.
 </div> <br>
 
+
 ### CreatesBlankPage
 Create an Sheet without data and that will not be uploaded to the original file, you must use `Submit` to apply the changes.
 
 <div class="top"> Parameters </div>
 <div class="info">
-  void
+  <b>Name:</b> string
+  <br>Optional parameter for the name of the page, by default it will be called <code>Blank</code> and the current index.
 </div> <br>
 
 <div class="top"> Returns </div>
@@ -54,11 +55,21 @@ Create an Sheet without data and that will not be uploaded to the original file,
 </div> <br>
 
 
+### RefreshFile
+Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
+
+<div class="top"> Parameters </div>
+<div class="info">  void  </div> <br>
+
+<div class="top"> Returns </div>
+<div class="info">  void  </div> <br>
 
 
+### SubmitFile
+Upload all the changes of all the pages to the file on the web.
 
-___
+<div class="top"> Parameters </div>
+<div class="info">  void  </div> <br>
 
-        CreatesBlankPage: (self: Spreadsheet, Name: string?) -> Sheet,
-        RefreshFile: (self: Spreadsheet) -> (),
-        SubmitFile: (self: Spreadsheet) -> (),
+<div class="top"> Returns </div>
+<div class="info">  void  </div> <br>
