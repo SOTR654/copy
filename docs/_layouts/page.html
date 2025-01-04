@@ -1,9 +1,9 @@
+---
+layout: default
+---
 <h3 id="-return-to-main"><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
-<p>page.Description</p>
 
-<!DOCTYPE html>
-<html lang="en">
 <body>
   <header>
     <h1>{{ site.title }}</h1>
@@ -13,8 +13,10 @@
     {{ content }}
   </main>
 
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-  </footer>
+  {% if site.theme_config.show_footer == true %}
+    <footer>
+      <div class="dashed"></div>
+      {% include horizontal_list.html collection=site.data.home.footer_entries %}
+    </footer>
+  {% endif %}
 </body>
-</html>
