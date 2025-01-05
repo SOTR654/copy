@@ -27,9 +27,9 @@ layout: default
 
         {% if item.url %}
           {% assign url = base  | append: {{item.type}}  %}
-          <a href={{url}}>{{display}}</a>
+          <a href={{url}}><code>{{display}}</code></a>
         {% else %}
-          {{display}}
+          <code>{{display}}</code>
         {% endif %}
 
         <br>
@@ -43,11 +43,14 @@ layout: default
         {% endif %}
 
         <!-- text -->
-        {{  item.description | custom_replace  }}
+        {{
+          item.description
+          | replace: " string ", '<code>string</code>'
+          | replace: " Sheet ", '<code>Sheet</code>'
+        }}
        </div>
       <br>
     {% endfor %}
 
-    {{ content | custom_replace  }}
   </main>
 </body>
