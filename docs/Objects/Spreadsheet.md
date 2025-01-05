@@ -20,7 +20,14 @@ methods:
       - name: Name
         type: string
         description: Page name.
+    returns:
+      - type: Sheet
+        description: Page name.
 
+<div class="info">
+  Sheet <br> Represents the requested page.
+</div>
+<br>
 ---
 
 <link href="css/styles.css" rel="stylesheet" type="text/css">

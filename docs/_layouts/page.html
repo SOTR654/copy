@@ -66,7 +66,6 @@ layout: default
         <!-- Description -->
         {{item.description}}
         <br>
-        <br>
 
         <!-- Parameters -->
         <div class="top"> Parameters </div>
@@ -75,11 +74,17 @@ layout: default
             <b>{{ param.name  }}:</b> {{  param.type  }}
             <br>{{  param.description }}
           </div>
-          <br>
         {% endfor %}
+        
+        <!-- Returns -->
+        <div class="top"> Returns </div>
+        {% for param in item.parameters %}
+          <div class="info">
+            <code>{{ param.type }}</code>
+            <br>{{  param.description }}
+          </div>
+        {% endfor %}
+        <br>
       {% endfor %}
-      <br>
-    
-    
   </main>
 </body>
