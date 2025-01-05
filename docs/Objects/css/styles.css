@@ -2,11 +2,13 @@
     left: 0;
     width: 50vw; /* 50% del ancho de la pantalla */
     background-color: #3d3e41;
+    color: white;
 }
 .top-right {
     right: 0;
     width: 50vw; /* 50% del ancho de la pantalla */
     background-color: #3d3e41;
+    color: white;
 }
 
 .top {
