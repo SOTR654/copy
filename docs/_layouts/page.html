@@ -11,7 +11,14 @@ layout: default
   
   <main>
     {% for item in page.properties %}
-      {{ item.title }}
+      <div class="top">
+        {{  item.title  }}
+        {{  item.type
+          | replace: " Sheet ", "<a href='https://sotr654.github.io/copy/Objects/Sheet.md'> <code>Sheet</code> </a>"
+          | replace: "read-only", "<code><span style='color:red'>read-only</span></code>"
+          | replace: "Cell", "<code>Cell</code>"}}
+      </div>
+      <br>
     {% endfor %}
 
     {{ content

@@ -3,12 +3,11 @@ layout: page
 description: "Focused on a GoogleSheets file."
 
 properties:
-  - title: "Home"
-    url: "/"
-  - title: "About"
-    url: "/about"
-  - title: "Contact"
-    url: "/contact"
+  - name: "DocumentID"
+    type: "string"
+
+  - name: "PagesData"
+    type: "Sheet"
 
 ---
 
