@@ -12,20 +12,11 @@ layout: default
   <main>
     {% for item in page.properties %}
       <div class="top">
-        {{  item.title  }}
-        {{  item.type
-          | replace: " Sheet ", "<a href='https://sotr654.github.io/copy/Objects/Sheet.md'> <code>Sheet</code> </a>"
-          | replace: "read-only", "<code><span style='color:red'>read-only</span></code>"
-          | replace: "Cell", "<code>Cell</code>"}}
+        {{  item.name  }} {{  item.type | custom_replace  }}
       </div>
       <br>
     {% endfor %}
 
-    {{ content
-      | replace: " Sheet ", "<a href='https://sotr654.github.io/copy/Objects/Sheet.md'> <code>Sheet</code> </a>"
-      | replace: "read-only", "<code><span style='color:red'>read-only</span></code>"
-
-      | replace: "Cell", "<code>Cell</code>"
-    }}
+    {{ content | custom_replace  }}
   </main>
 </body>
