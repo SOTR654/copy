@@ -4,6 +4,8 @@ layout: default
 <h3 id="-return-to-main"><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 
+{% assign base = "https://sotr654.github.io/copy/Objects/" %}
+
 <body>
   <header>
     {{ page.description }}
@@ -22,9 +24,14 @@ layout: default
           | replace: " string ", '<code>string</code>'
           | replace: " Sheet ", '<code>Sheet</code>'
         %}
-        {% assign url = "https://sotr654.github.io/copy/Objects/" | append: {{item.type}}  %}
 
-        <a href={{url}}>{{display}}</a>
+        {% if item.url %}
+          {% assign url = base  | append: {{item.type}}  %}
+          <a href={{url}}>{{display}}</a>
+        {% else %}
+          {{display}}
+        {% endif %}
+
         <br>
       </div>
 
