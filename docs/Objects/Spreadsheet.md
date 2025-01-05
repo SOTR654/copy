@@ -16,10 +16,12 @@ properties:
 methods:
   - name: OpenPage
     description: Open the specific Sheet object, according to the name.
+
     parameters:
       - name: Name
         type: string
         description: Page name.
+    
     returns:
       - type: Sheet
         description: Page name.

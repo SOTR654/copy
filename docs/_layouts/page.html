@@ -78,7 +78,7 @@ layout: default
         
         <!-- Returns -->
         <div class="top"> Returns </div>
-        {% for param in item.parameters %}
+        {% for param in item.methods %}
           <div class="info">
             <code>{{ param.type }}</code>
             <br>{{  param.description }}
