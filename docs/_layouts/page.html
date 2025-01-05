@@ -18,6 +18,13 @@ layout: default
     <!-- Properties -->
     <h1> Properties </h3>
     {% for item in page.properties %}
+      <div class="top-left">
+        a
+      </div>
+      <div class="top-right">
+        b
+      </div>
+
       <!-- Title -->
       <div class="top">
         {{  item.name  }}
@@ -84,7 +91,6 @@ layout: default
             <br>{{  param.description }}
           </div>
         {% endfor %}
-        <br>
       {% endfor %}
   </main>
 </body>
