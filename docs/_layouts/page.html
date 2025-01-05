@@ -22,12 +22,12 @@ layout: default
       <!-- Description -->
       <div class="info">
         <!-- Types -->
-        {% if intem.read_only == true %}
+        {% if item.read_only == true %}
           <code><span style='color:red'>read-only</span></code><br>
         {% endif %}
 
         <!-- text -->
-        {{  item.description  }}
+        {{  item.description | custom_replace  }}
        </div>
       <br>
     {% endfor %}
