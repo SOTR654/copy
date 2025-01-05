@@ -14,9 +14,12 @@ layout: default
     <!-- Create properties -->
     <h1 id="Properties-title"> Properties </h3>
     {% for item in page.properties %}
+
       <!-- Title -->
       <div class="top">
-        {{  item.name  }} {{  item.type | custom_replace  }} <br>
+        {{  item.name  }}
+        <a href="{{ item.url }}">{{item.type}}</a>
+        <br>
       </div>
 
       <!-- Description -->
