@@ -15,7 +15,7 @@ properties:
 
 methods:
   - name: OpenPage
-    description: Open the specific Sheet object. according to the name.
+    description: Open the specific Sheet object, according to the name.
     parameters:
       - name: Name
         type: string

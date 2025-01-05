@@ -21,13 +21,12 @@ layout: default
       <!-- Title -->
       <div class="top">
         {{  item.name  }}
-        {% assign display = item.type | prepend: "<code>" | append: "</code>" %}
         
         <!-- Use url? -->
         {% assign found = false %}
         {% for item in link_list %}
           {% if item == item.type %}
-            <a href={{ base | append: {{item.type}}}}><code>{{display}}</code></a>
+            <a href={{ base | append: {{item.type}}}}><code>{{item.type}}</code></a>
             {% assign found = true %}
             {% break %}
           {% endif %}
@@ -35,7 +34,7 @@ layout: default
 
         <!-- No use url -->
         {% if found == false %}
-          <code>{{display}}</code>
+          <code>{{item.type}}</code>
         {% endif %}
         <br>
       </div>
@@ -62,17 +61,19 @@ layout: default
     <h1> Methods </h3>
       {% for item in page.methods %}
         <!-- Title -->
-        <h3> {{  item.name  }} </h3>
+        <b> {{  item.name  }} </b> <br>
         
         <!-- Description -->
-        {{item.description}} <br>
+        {{item.description}}
+        <br>
+        <br>
 
         <!-- Parameters -->
         <div class="top"> Parameters </div>
         {% for param in item.parameters %}
           <div class="info">
-            <b>{{ param.name | append: ":"}}:</b> {{param.type}}
-            <br>{{param.description}}.
+            <b>{{ param.name  }}:</b> {{  param.type  }}
+            <br>{{  param.description }}
           </div>
           <br>
         {% endfor %}
