@@ -7,10 +7,13 @@ layout: default
   <header>
     {{ page.description }}
     <hr>
-    <br>
   </header>
   
   <main>
+    {% for item in page.properties %}
+      {{ item.title }}
+    {% endfor %}
+
     {{ content
       | replace: " Sheet ", "<a href='https://sotr654.github.io/copy/Objects/Sheet.md'> <code>Sheet</code> </a>"
       | replace: "read-only", "<code><span style='color:red'>read-only</span></code>"

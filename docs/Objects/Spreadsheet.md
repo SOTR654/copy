@@ -1,26 +1,25 @@
 ---
 layout: page
 description: "Focused on a GoogleSheets file."
+
+properties:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about"
+  - title: "Contact"
+    url: "/contact"
+
 ---
 
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 # Properties
 
-<div class="top">
-  DocumentID string
-</div>
-<div class="info">
-  read-only
-  <br> Stores the ID of the page that created it.
-</div>
-<div class="top">
-  <b>PagesData</b> Sheet
-</div>
-<div class="info">
-  List of Sheet ordered by index that contains the file.
-</div>
-
+<div class="top">   DocumentID string  </div>
+<div class="info">  read-only  <br> Stores the ID of the page that created it.  </div>
+<div class="top">   <b>PagesData</b> Sheet  </div>
+<div class="info">  List of Sheet ordered by index that contains the file.  </div>
 <br>
 
 # Methods
@@ -29,7 +28,7 @@ description: "Focused on a GoogleSheets file."
 Open the specific Sheet object. according to the name. 
 
 <div class="top"> Parameters </div>
-<div class="info">
+<div class="info">a
   <b>Name:</b> string
   <br>Page name.
 </div>
