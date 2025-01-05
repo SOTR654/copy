@@ -1,10 +1,12 @@
 ---
 layout: default
 ---
-<h3 id="-return-to-main"><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
+<h3><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
-
 {% assign base = "https://sotr654.github.io/copy/Objects/" %}
+
+{% assign link_list = "Sheet" | split: "," %}
+
 
 <body>
   <header>
@@ -13,25 +15,28 @@ layout: default
   </header>
   
   <main>
-    <!-- Create properties -->
-    <h1 id="Properties-title"> Properties </h3>
+    <!-- Properties -->
+    <h1> Properties </h3>
     {% for item in page.properties %}
-
       <!-- Title -->
       <div class="top">
         {{  item.name  }}
-        {% assign display = item.type
-          | replace: " string ", '<code>string</code>'
-          | replace: " Sheet ", '<code>Sheet</code>'
-        %}
+        {% assign display = item.type | prepend: "<code>" | append: "</code>" %}
+        
+        <!-- Use url? -->
+        {% assign found = false %}
+        {% for item in link_list %}
+          {% if item == item.type %}
+            <a href={{ base | append: {{item.type}}}}><code>{{display}}</code></a>
+            {% assign found = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
 
-        {% if item.url %}
-          {% assign url = base  | append: {{item.type}}  %}
-          <a href={{url}}><code>{{display}}</code></a>
-        {% else %}
+        <!-- No use url -->
+        {% if found == false %}
           <code>{{display}}</code>
         {% endif %}
-
         <br>
       </div>
 
@@ -45,12 +50,35 @@ layout: default
         <!-- text -->
         {{
           item.description
-          | replace: " string ", '<code>string</code>'
-          | replace: " Sheet ", '<code>Sheet</code>'
+          | replace: " string ", ' <code>string</code> '
+          | replace: " Sheet ", ' <code>Sheet</code> '
         }}
        </div>
       <br>
     {% endfor %}
+    <br>
 
+    <!-- Methods -->
+    <h1> Methods </h3>
+      {% for item in page.methods %}
+        <!-- Title -->
+        <h3> {{  item.name  }} </h3>
+        
+        <!-- Description -->
+        {{item.description}} <br>
+
+        <!-- Parameters -->
+        <div class="top"> Parameters </div>
+        {% for param in item.parameters %}
+          <div class="info">
+            <b>{{ param.name | append: ":"}}:</b> {{param.type}}
+            <br>{{param.description}}.
+          </div>
+          <br>
+        {% endfor %}
+      {% endfor %}
+      <br>
+    
+    
   </main>
 </body>

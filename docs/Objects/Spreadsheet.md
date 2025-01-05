@@ -3,26 +3,27 @@ layout: page
 description: "Focused on a GoogleSheets file."
 
 properties:
-  - name: "DocumentID"
-    type: "string"
+  - name: DocumentID
+    type: string
     description: Stores the ID of the page that created it.
     read_only: true
+    nourl: true
 
-  - name: "PagesData"
-    type: "Sheet"
-    url: "Sheet.md"
-    description: List of <code>Sheet<code> ordered by index that contains the file.
+  - name: PagesData
+    type: Sheet
+    description: List of Sheet ordered by index that contains the file.
+
+methods:
+  - name: OpenPage
+    description: Open the specific Sheet object. according to the name.
+    parameters:
+      - name: Name
+        type: string
+        description: Page name.
+
 ---
 
 <link href="css/styles.css" rel="stylesheet" type="text/css">
-
-# Properties
-
-<div class="top">   DocumentID string  </div>
-<div class="info">  read-only  <br> Stores the ID of the page that created it.  </div>
-<div class="top">   <b>PagesData</b> Sheet  </div>
-<div class="info">  List of Sheet ordered by index that contains the file.  </div>
-<br>
 
 # Methods
 
@@ -30,7 +31,7 @@ properties:
 Open the specific Sheet object. according to the name. 
 
 <div class="top"> Parameters </div>
-<div class="info">a
+<div class="info">
   <b>Name:</b> string
   <br>Page name.
 </div>
