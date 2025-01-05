@@ -22,7 +22,7 @@ layout: default
           | replace: " string ", '<code>string</code>'
           | replace: " Sheet ", '<code>Sheet</code>'
         %}
-        {% assign url = "https://sotr654.github.io/copy/Objects" | append: {{item.type}}  %}
+        {% assign url = "https://sotr654.github.io/copy/Objects/" | append: {{item.type}}  %}
 
         <a href={{url}}>{{display}}</a>
         <br>
@@ -36,11 +36,11 @@ layout: default
         {% endif %}
 
         <!-- text -->
-        <!-- {{  item.description | custom_replace  }} -->
+        {{  item.description | custom_replace  }}
        </div>
       <br>
     {% endfor %}
 
-    <!-- {{ content | custom_replace  }} -->
+    {{ content | custom_replace  }}
   </main>
 </body>
