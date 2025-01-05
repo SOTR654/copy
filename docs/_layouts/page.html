@@ -69,19 +69,19 @@ layout: default
 
         <!-- Parameters -->
         <div class="top"> Parameters </div>
-        {% for param in item.parameters %}
+        {% for v in item.parameters %}
           <div class="info">
-            <b>{{ param.name  }}:</b> {{  param.type  }}
-            <br>{{  param.description }}
+            <b>{{ v.name  }}:</b> {{  v.type  }}
+            <br>{{  v.description }}
           </div>
         {% endfor %}
         
         <!-- Returns -->
         <div class="top"> Returns </div>
-        {% for param in item.methods %}
+        {% for v in item.returns %}
           <div class="info">
-            <code>{{ param.type }}</code>
-            <br>{{  param.description }}
+            <code>{{ v.type }}</code>
+            <br>{{  v.description }}
           </div>
         {% endfor %}
         <br>

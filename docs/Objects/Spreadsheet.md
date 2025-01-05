@@ -22,33 +22,20 @@ methods:
         description: Page name.
     returns:
       - type: Sheet
-        description: Page name.
+        description: Represents the requested page.
 
-  - name: ClosePage
-    description: Close the specified Sheet object.
+  - name: CreateBlankPage
+    description: Create an Sheet without data and that will not be uploaded to the original file, you must use <code>Submit</code> to apply the changes..
     parameters:
       - name: Name
         type: string
-        description: Name of the page to close.
+        description: Optional parameter for the name of the page, by default it will be called <code>Blank</code> and the current index.
     returns:
-      - type: bool
-        description: Returns true if the page was closed successfully.
+      - type: Sheet
+        description: Represents the requested page.
 
 ---
 
-### CreateBlankPage
-Create an Sheet without data and that will not be uploaded to the original file, you must use `Submit` to apply the changes.
-
-<div class="top"> Parameters </div>
-<div class="info">
-  <b>Name:</b> string
-  <br>Optional parameter for the name of the page, by default it will be called <code>Blank</code> and the current index.
-</div>
-<div class="top"> Returns </div>
-<div class="info">
-  Sheet <br>Represents the requested page.
-</div>
-<br>
 
 ### RefreshFile
 Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
