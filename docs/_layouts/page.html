@@ -18,7 +18,13 @@ layout: default
       <!-- Title -->
       <div class="top">
         {{  item.name  }}
-        <a href="{{ item.url }}">{{item.type}}</a>
+        {% assign display = item.type
+          | replace: " string ", '<code>string</code>'
+          | replace: " Sheet ", '<code>Sheet</code>'
+        %}
+        {% assign url = "https://sotr654.github.io/copy/Objects" | append: {{item.type}}  %}
+
+        <a href={{url}}>{{display}}</a>
         <br>
       </div>
 
@@ -30,11 +36,11 @@ layout: default
         {% endif %}
 
         <!-- text -->
-        {{  item.description | custom_replace  }}
+        <!-- {{  item.description | custom_replace  }} -->
        </div>
       <br>
     {% endfor %}
 
-    {{ content | custom_replace  }}
+    <!-- {{ content | custom_replace  }} -->
   </main>
 </body>

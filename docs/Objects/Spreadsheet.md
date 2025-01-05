@@ -10,7 +10,7 @@ properties:
 
   - name: "PagesData"
     type: "Sheet"
-    ulr: "/Objects/Sheet.md"
+    url: "Sheet.md"
     description: List of <code>Sheet<code> ordered by index that contains the file.
 ---
 
