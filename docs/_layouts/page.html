@@ -5,7 +5,7 @@ layout: default
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 {% assign base = "https://sotr654.github.io/copy/Objects/" %}
 
-{% assign link_list = "Sheet" | split: "," %}
+{% assign link_list = "Sheet," | split: "," %}
 
 
 <body>
@@ -19,29 +19,18 @@ layout: default
     <h1> Properties </h3>
     {% for item in page.properties %}
       <!-- Title -->
-      <div class="top">
-        {{  item.name  }}
-        
-        <!-- Use url? -->
-        {% assign found = false %}
-        {% for item in link_list %}
-          {% if item == item.type %}
-            <a href={{ base | append: {{item.type}}}}><code>{{item.type}}</code></a>
-            {% assign found = true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-
-        <!-- No use url -->
-        {% if found == false %}
-          <code>{{item.type}}</code>
-        {% endif %}
-        <br>
-      </div>
+      <div class="top">    {{  item.name  }}    </div>
 
       <!-- Description -->
       <div class="info">
-        <!-- Types -->
+        <!-- Type? -->
+        {% if link_list contains item.type %}
+          <a href={{ base | append: {{item.type}}}}><code>{{item.type}}</code></a>
+        {% else %}
+          <code>{{item.type}}</code>
+        {% endif %}
+
+        <!-- read only? -->
         {% if item.read_only == true %}
           <code><span style='color:red'>read-only</span></code><br>
         {% endif %}
