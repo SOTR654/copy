@@ -3,24 +3,30 @@ layout: page
 description: "Focused on a GoogleSheets file."
 
 properties:
-  - name: DocumentID
+    name: DocumentID
     type: string
     description: Stores the ID of the page that created it.
     read_only: true
     nourl: true
 
-  - name: PagesData
+    name: PagesData
     type: Sheet
     description: List of Sheet ordered by index that contains the file.
 
 methods:
-  - name: OpenPage
+    name: OpenPage
     description: Open the specific Sheet object, according to the name.
 
     parameters:
-      - name: Name
+        name: Name
         type: string
         description: Page name.
+    
+    returns:
+        type: Sheet
+        description: Page name.
+
+
 ---
 
 ### CreateBlankPage
