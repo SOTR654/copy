@@ -21,34 +21,7 @@ methods:
       - name: Name
         type: string
         description: Page name.
-    
-    returns:
-      - type: Sheet
-        description: Page name.
-
-<div class="info">
-  Sheet <br> Represents the requested page.
-</div>
-<br>
 ---
-
-<link href="css/styles.css" rel="stylesheet" type="text/css">
-
-# Methods
-
-### OpenPage
-Open the specific Sheet object. according to the name. 
-
-<div class="top"> Parameters </div>
-<div class="info">
-  <b>Name:</b> string
-  <br>Page name.
-</div>
-<div class="top"> Returns </div>
-<div class="info">
-  Sheet <br> Represents the requested page.
-</div>
-<br>
 
 ### CreateBlankPage
 Create an Sheet without data and that will not be uploaded to the original file, you must use `Submit` to apply the changes.
