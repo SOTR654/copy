@@ -3,36 +3,36 @@ layout: page
 description: "Focused on a GoogleSheets file."
 
 properties:
-  name: DocumentID
-  type: string
-  description: Stores the ID of the page that created it.
-  read_only: true
-  nourl: true
+  - name: DocumentID
+  - type: string
+  - description: Stores the ID of the page that created it.
+  - read_only: true
+  - nourl: true
 
-  name: PagesData
-  type: Sheet
-  description: List of Sheet ordered by index that contains the file.
+  - name: PagesData
+  - type: Sheet
+  - description: List of Sheet ordered by index that contains the file.
 
 methods:
   - name: OpenPage
-    description: Open the specific Sheet object, according to the name.
-    parameters:
+  - description: Open the specific Sheet object, according to the name.
+  - parameters:
       - name: Name
-        type: string
-        description: Page name.
-    returns:
+      - type: string
+      - description: Page name.
+  - returns:
       - type: Sheet
-        description: Page name.
+      - description: Page name.
 
   - name: ClosePage
-    description: Close the specified Sheet object.
-    parameters:
+  - description: Close the specified Sheet object.
+  - parameters:
       - name: Name
-        type: string
-        description: Name of the page to close.
-    returns:
+      - type: string
+      - description: Name of the page to close.
+  - returns:
       - type: bool
-        description: Returns true if the page was closed successfully.
+      - description: Returns true if the page was closed successfully.
 
 ---
 
