@@ -5,9 +5,12 @@ description: "Focused on a GoogleSheets file."
 properties:
   - name: "DocumentID"
     type: "string"
+    description: Stores the ID of the page that created it.
+    read_only: true
 
   - name: "PagesData"
     type: "Sheet"
+    description: List of Sheet ordered by index that contains the file.
 
 ---
 

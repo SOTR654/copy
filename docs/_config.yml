@@ -27,6 +27,8 @@ highlighter: rouge
 sass:
   style: :compressed
 
+plugins_dir: _plugins
+
 plugins:
   - jekyll-feed
   - jekyll-soopr-seo-tag

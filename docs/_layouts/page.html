@@ -2,6 +2,7 @@
 layout: default
 ---
 <h3 id="-return-to-main"><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
 
 <body>
   <header>
@@ -10,10 +11,24 @@ layout: default
   </header>
   
   <main>
+    <!-- Create properties -->
+    <h1 id="Properties-title"> Properties </h3>
     {% for item in page.properties %}
+      <!-- Title -->
       <div class="top">
-        {{  item.name  }} {{  item.type | custom_replace  }}
+        {{  item.name  }} {{  item.type | custom_replace  }} <br>
       </div>
+
+      <!-- Description -->
+      <div class="info">
+        <!-- Types -->
+        {% if intem.read_only == true %}
+          <code><span style='color:red'>read-only</span></code><br>
+        {% endif %}
+
+        <!-- text -->
+        {{  item.description  }}
+       </div>
       <br>
     {% endfor %}
 
