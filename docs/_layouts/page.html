@@ -61,7 +61,7 @@ layout: default
     <h1> Methods </h3>
       {% for item in page.methods %}
         <!-- Title -->
-        <b> {{  item.name  }} </b> <br>
+        <h2> {{  item.name  }} </h2> <br>
         
         <!-- Description -->
         {{item.description}}
@@ -84,6 +84,7 @@ layout: default
             <br>{{  param.description }}
           </div>
         {% endfor %}
+        <br>
       {% endfor %}
   </main>
 </body>
