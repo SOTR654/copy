@@ -25,7 +25,7 @@ methods:
         description: Represents the requested page.
 
   - name: CreateBlankPage
-    description: Create an Sheet without data and that will not be uploaded to the original file, you must use <code>Submit</code> to apply the changes..
+    description: Create an Sheet without data and that will not be uploaded to the original file, you must use <code>Submit</code> to apply the changes.
     parameters:
       - name: Name
         type: string
@@ -34,17 +34,10 @@ methods:
       - type: Sheet
         description: Represents the requested page.
 
+  - name: RefreshFile
+    description: Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
+    
 ---
-
-
-### RefreshFile
-Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
-
-<div class="top"> Parameters </div>
-<div class="info">  void  </div>
-<div class="top"> Returns </div>
-<div class="info">  void  </div>
-<br>
 
 ### SubmitFile
 Upload all the changes of all the pages to the file on the web.

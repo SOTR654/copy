@@ -60,9 +60,22 @@ layout: default
         <div class="top"> Parameters </div>
         {% for v in item.parameters %}
           <div class="info">
-            <b>{{ v.name  }}:</b> {{  v.type  }}
-            <br>{{  v.description }}
+            {% assign text = <code>{{item.type}}</code> %}
+            {% if link_list contains item.type %}
+              <b>{{ v.name  }}:</b> <a href={{ base | append: {{item.type}} }}>{{text}}</a>
+            {% else %}
+              <b>{{ v.name  }}:</b> {{text}}
+            {% endif %}
+
+            <!-- Description -->
+            <br>{{
+              v.description
+              | replace: " string ", ' <code>string</code> '
+              | replace: " Sheet ", ' <code>Sheet</code> '
+            }}
           </div>
+        {% else %}
+          void
         {% endfor %}
         
         <!-- Returns -->
@@ -72,6 +85,8 @@ layout: default
             <code>{{ v.type }}</code>
             <br>{{  v.description }}
           </div>
+        {% else %}
+          void
         {% endfor %}
         <br>
       {% endfor %}
