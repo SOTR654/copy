@@ -1,34 +1,16 @@
-### [Return to Main](https://sotr654.github.io/copy/)
-<link href="css/styles.css" rel="stylesheet" type="text/css">
+---
+layout: page
+description: Focused on the GoogleSheets API.
 
-Focused on the GoogleSheets API.
+methods:
+  - name: OpenSheets
+    description: Method that will open and return the indicated file in the form of an Spreadsheet object.
+    parameters:
+      - name: DocumentID
+        type: string
+        description: ID of the Spreadsheet to open.
+    returns:
+      - type: Spreadsheet
+        description: Spreadsheet representing the file.
 
-___
-
-<br>
-
-# Methods
-
-### OpenSheets
-Method that will open and return the indicated file in the form of an [`Spreadsheet`](Spreadsheet.md) object.
-
-<div class="top"> Parameters </div>
-<div class="info">
-  <b>DocumentID:</b> <code>string</code><br>
-    ID of the Spreadsheet to open.
-</div>
-<br>
-
-<div class="top"> Returns </div>
-<div class="info">
-  <b>Spreadsheet:</b> <code><a href="Spreadsheet.md">Spreadsheet</a></code><br>
-    Spreadsheet representing the file.
-</div>
-
-<br>
-<br>
-
-
-
-
-
+---
