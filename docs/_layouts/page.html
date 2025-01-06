@@ -29,10 +29,11 @@ layout: default
       <!-- Description -->
       <div class="info">
         <!-- Type? -->
+        {% assign text = "<code>" | append: item.type | append: "</code>" %}
         {% if link_list contains item.type %}
-          <a href={{ base | append: {{item.type}}}}><code>{{item.type}}</code></a>
+          <a href={{ base | append: item.type }}>{{text}}</a>
         {% else %}
-          <code>{{item.type}}</code>
+          {{text}}
         {% endif %}
 
         <!-- read only? -->
@@ -70,9 +71,9 @@ layout: default
       <div class="top"> Parameters </div>
       {% for v in item.parameters %}
         <div class="info">
-          {% assign text = <code>{{item.type}}</code> %}
+          {% assign text = "<code>" | append: item.type | append: "</code>" %}
           {% if link_list contains item.type %}
-            <b>{{ v.name  }}:</b> <a href={{ base | append: {{item.type}} }}>{{text}}</a>
+            <b>{{ v.name  }}:</b> <a href={{ base | append: item.type}}>{{text}}</a>
           {% else %}
             <b>{{ v.name  }}:</b> {{text}}
           {% endif %}
