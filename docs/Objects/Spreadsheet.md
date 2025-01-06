@@ -1,6 +1,6 @@
 ---
 layout: page
-description: Focused on a GoogleSheets file.
+description: Focused on a Spreadsheet object.
 
 properties:
   - name: DocumentID

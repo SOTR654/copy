@@ -7,6 +7,7 @@ layout: default
 
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
 
+<script src="js/code.js" defer></script>
 
 <body>
   <header>
@@ -27,6 +28,10 @@ layout: default
       <div class="top">    {{  item.name  }}    </div>
 
       <!-- Description -->
+      <div class="info">
+        <h1 id="output"> {{ text }} </h1>
+      </div>
+      
       <div class="info">
         <!-- Type? -->
         {% assign text = "<code>" | append: item.type | append: "</code>" %}

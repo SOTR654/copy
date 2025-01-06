@@ -13,12 +13,12 @@ properties:
     read_only: true
 
   - name: Cache
-    type: {{Cell}}
+    type: "{{Cell}}"
     description: List with lists containing the data for each cell.
     read_only: true
 
   - name: Changes
-    type: {[string]: Cell}
+    type: "{[string]: Cell}"
     description: Dictionary that stores the changed cells.
     read_only: true
 
