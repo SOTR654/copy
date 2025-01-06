@@ -12,6 +12,7 @@ layout: default
   <header>
     {{ page.description }}
     <hr>
+    <br>
   </header>
   
   <main>
@@ -32,8 +33,9 @@ layout: default
 
         <!-- read only? -->
         {% if item.read_only == true %}
-          <code><span style='color:red'>read-only</span></code><br>
+          <code><span style='color:red'>read-only</span></code>
         {% endif %}
+        <br>
 
         <!-- text -->
         {{
