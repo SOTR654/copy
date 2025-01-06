@@ -16,8 +16,12 @@ layout: default
   </header>
   
   <main>
-    <!-- Properties -->
-    <h1> Properties </h3>
+    <!-- Properties - title -->
+    {% if page.properties.size > 0 %}
+      <h1> Properties </h3>
+    {% endif %}
+
+    <!-- Properties - list -->
     {% for item in page.properties %}
       <!-- Title -->
       <div class="top">    {{  item.name  }}    </div>
@@ -46,51 +50,55 @@ layout: default
        </div>
       <br>
     {% endfor %}
-    <br>
 
-    <!-- Methods -->
-    <h1> Methods </h3>
-      {% for item in page.methods %}
-        <!-- Title -->
-        <h2> {{  item.name  }} </h2>
-        
-        <!-- Description -->
-        {{item.description}}
-        <br>
 
-        <!-- Parameters -->
-        <div class="top"> Parameters </div>
-        {% for v in item.parameters %}
-          <div class="info">
-            {% assign text = <code>{{item.type}}</code> %}
-            {% if link_list contains item.type %}
-              <b>{{ v.name  }}:</b> <a href={{ base | append: {{item.type}} }}>{{text}}</a>
-            {% else %}
-              <b>{{ v.name  }}:</b> {{text}}
-            {% endif %}
+    <!-- Methods - title -->
+    {% if page.methods.size > 0 %}
+      <h1> Methods </h3>
+    {% endif %}
 
-            <!-- Description -->
-            <br>{{
-              v.description
-              | replace: " string ", ' <code>string</code> '
-              | replace: " Sheet ", ' <code>Sheet</code> '
-            }}
-          </div>
-        {% else %}
-          <div class="info">    <code>void</code>    </div>
-        {% endfor %}
-        
-        <!-- Returns -->
-        <div class="top"> Returns </div>
-        {% for v in item.returns %}
-          <div class="info">
-            <code>{{ v.type }}</code>
-            <br>{{  v.description }}
-          </div>
-        {% else %}
-          <div class="info">    <code>void</code>    </div>
-        {% endfor %}
-        <br>
+    <!-- Methods - list -->
+    {% for item in page.methods %}
+      <!-- Title -->
+      <h2> {{  item.name  }} </h2>
+      
+      <!-- Description -->
+      {{item.description}}
+      <br>
+
+      <!-- Parameters -->
+      <div class="top"> Parameters </div>
+      {% for v in item.parameters %}
+        <div class="info">
+          {% assign text = <code>{{item.type}}</code> %}
+          {% if link_list contains item.type %}
+            <b>{{ v.name  }}:</b> <a href={{ base | append: {{item.type}} }}>{{text}}</a>
+          {% else %}
+            <b>{{ v.name  }}:</b> {{text}}
+          {% endif %}
+
+          <!-- Description -->
+          <br>{{
+            v.description
+            | replace: " string ", ' <code>string</code> '
+            | replace: " Sheet ", ' <code>Sheet</code> '
+          }}
+        </div>
+      {% else %}
+        <div class="info">    <code>void</code>    </div>
       {% endfor %}
+      
+      <!-- Returns -->
+      <div class="top"> Returns </div>
+      {% for v in item.returns %}
+        <div class="info">
+          <code>{{ v.type }}</code>
+          <br>{{  v.description }}
+        </div>
+      {% else %}
+        <div class="info">    <code>void</code>    </div>
+      {% endfor %}
+      <br>
+    {% endfor %}
   </main>
 </body>
