@@ -1,13 +1,12 @@
 ---
 layout: page
-description: "Focused on a GoogleSheets file."
+description: Focused on a GoogleSheets file.
 
 properties:
   - name: DocumentID
     type: string
     description: Stores the ID of the page that created it.
     read_only: true
-    nourl: true
 
   - name: PagesData
     type: Sheet

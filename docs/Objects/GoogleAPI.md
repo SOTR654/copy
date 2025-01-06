@@ -1,10 +1,11 @@
-### [Return to Main](https://sotr654.github.io/copy/)
-<link href="css/styles.css" rel="stylesheet" type="text/css">
+---
+layout: page
+description: Focused on the main module.
 
-Focused on the main module.
-___
+properties:
+  - name: GoogleSheets
+    type: GoogleSheets
+    description: Property to access the <code>GoogleSheets</code> API.
+    read_only: true
 
-### GoogleSheets
-Property to access the [`GoogleSheets`](GoogleSheets.md) API.
-
-
+---
