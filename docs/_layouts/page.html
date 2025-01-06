@@ -5,7 +5,7 @@ layout: default
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 {% assign base = "https://sotr654.github.io/copy/Objects/" %}
 
-{% assign link_list = "Sheet,GoogleSheets,Spreadsheet" | split: "," %}
+{% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
 
 
 <body>
@@ -71,9 +71,9 @@ layout: default
       <div class="top"> Parameters </div>
       {% for v in item.parameters %}
         <div class="info">
-          {% assign text = "<code>" | append: item.type | append: "</code>" %}
-          {% if link_list contains item.type %}
-            <b>{{ v.name  }}:</b> <a href={{ base | append: item.type}}>{{text}}</a>
+          {% assign text = "<code>" | append: v.type | append: "</code>" %}
+          {% if link_list contains v.type %}
+            <b>{{ v.name  }}:</b> <a href={{ base | append: v.type}}>{{text}}</a>
           {% else %}
             <b>{{ v.name  }}:</b> {{text}}
           {% endif %}
@@ -93,7 +93,12 @@ layout: default
       <div class="top"> Returns </div>
       {% for v in item.returns %}
         <div class="info">
-          <code>{{ v.type }}</code>
+            {% assign text = "<code>" | append: v.type | append: "</code>" %}
+            {% if link_list contains v.type %}
+              <a href={{ base | append: v.type}}>{{text}}
+            {% else %}
+              {{text}}
+            {% endif %}
           <br>{{  v.description }}
         </div>
       {% else %}
