@@ -95,7 +95,7 @@ layout: default
         <div class="info">
             {% assign text = "<code>" | append: v.type | append: "</code>" %}
             {% if link_list contains v.type %}
-              <a href={{ base | append: v.type}}>{{text}}
+              <a href={{ base | append: v.type}}>{{text}}</a>
             {% else %}
               {{text}}
             {% endif %}
