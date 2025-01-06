@@ -9,7 +9,7 @@ properties:
     read_only: true
     nourl: true
 
-    name: PagesData
+  - name: PagesData
     type: Sheet
     description: List of Sheet ordered by index that contains the file.
 
@@ -37,13 +37,7 @@ methods:
   - name: RefreshFile
     description: Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
     
+  - name: SubmitFile
+    description: Upload all the changes of all the pages to the file on the web.
+    
 ---
-
-### SubmitFile
-Upload all the changes of all the pages to the file on the web.
-
-<div class="top"> Parameters </div>
-<div class="info">  void  </div>
-<div class="top"> Returns </div>
-<div class="info">  void  </div>
-<br>
