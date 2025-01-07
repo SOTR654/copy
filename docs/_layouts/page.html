@@ -94,7 +94,7 @@ layout: default
   function replaceWordsWithLinks(text) {
     for (let i in urls){
       let u = urls[i]
-      text.replace(u, `<a href="${base}${u}">${u}</a>`)
+      text = text.replace(u, `<a href="${base}${u}">${u}</a>`)
     }
     return text;
   }
