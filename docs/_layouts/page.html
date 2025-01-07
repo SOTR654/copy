@@ -92,10 +92,10 @@ layout: default
     "Cell"
   ]
   function replaceWordsWithLinks(text) {
-    for (let i in urls){
-      let u = urls[i]
-      text = text.replace(u, `<a href="${base}${u}">${u}</a>`)
-    }
+    urls.forEach(function(u) {
+      const regex = new RegExp(`\\b${u}\\b`, 'g');
+      text = text.replace(regex, `<a href="${base}${u}">${u}</a>`);
+    })
     return text;
   }
 
