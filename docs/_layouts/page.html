@@ -8,7 +8,8 @@ layout: default
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
 <script>
   let dictionary = {
-    " Sheet ": " <code> Sheet </code> ",
+    "Sheet":  "<code> Sheet </code>",
+    "string": "<code> string </code>",
   }
 
   window.onload = function(){
@@ -26,7 +27,7 @@ layout: default
     // Obtener el texto del elemento <h1>
     const outputElement = document.getElementById('output');
     const modifiedText = replaceWords(outputElement.innerText);
-    outputElement.innerText = "a" + modifiedText;
+    outputElement.innerText = modifiedText;
   }
 </script>
 
@@ -50,9 +51,9 @@ layout: default
       <div class="top">    {{  item.name  }}    </div>
 
       <!-- Description -->
-      <div class="info" id = "output">
+      <div class = "info">
         <!-- Type? -->
-        {{  item.type   }}
+        <p id = "output">{{  item.type   }}<p>
         
         <!-- read only? -->
         {% if item.read_only == true %}
