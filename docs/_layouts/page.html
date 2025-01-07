@@ -7,24 +7,19 @@ layout: default
 
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
 <script>
-  let dictionary = {
+  let base = "https://sotr654.github.io/copy/Objects/"
+  let urls = [
+    "GoogleSheets",
+    "Sheet",
+    "Spreadsheet"
+  ]
 
-  }
-  function replaceWords(text) {
-    for (let word in dictionary) {
-      // Crea una expresión regular para encontrar la palabra
-      const regex = new RegExp(`\\b${word}\\b`, 'g');
-      // Reemplaza todas las ocurrencias de la palabra por el valor del diccionario
-      text = text.replace(regex, dictionary[word]);
-    }
-    return text;
-  }
-
-  const outputElements = document.querySelectorAll('.output');
-  outputElements.forEach(v => {
+  //    Set urls
+  document.querySelectorAll('.url').forEach(v => {
     const modifiedText = replaceWords(v.innerText);
-    v.innerText = modifiedText;
-  });
+    let StringURL = urls.includes(v.innerText) && base + v.innerText || ""
+    v.innerHTML = '<code><a href="' + StringURL + '>' + v.innerText + '</a></code>'
+  })
 </script>
 
 
@@ -49,9 +44,7 @@ layout: default
       <!-- Description -->
       <div class = "info">
         <!-- Type? -->
-        <div class = "output">
-          <code>{{  item.type   }}</code>
-        </div>
+        <div class = "url">    {{  item.type   }}    </div>
         
         <!-- read only? -->
         {% if item.read_only == true %}
