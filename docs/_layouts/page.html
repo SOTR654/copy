@@ -16,9 +16,10 @@ layout: default
 
   //    Set urls
   document.querySelectorAll('.url').forEach(v => {
-    const modifiedText = replaceWords(v.innerText);
-    let StringURL = urls.includes(v.innerText) && base + v.innerText || ""
-    v.innerHTML = '<code><a href="' + StringURL + '>' + v.innerText + '</a></code>'
+    //let modifiedText = replaceWords(v.innerText);
+    if (urls.includes(v.innerText)){
+      v.innerHTML = '<code><a href="' + base + v.innerText + '">' + v.innerText + '</a></code>'
+    }
   })
 </script>
 
@@ -44,7 +45,7 @@ layout: default
       <!-- Description -->
       <div class = "info">
         <!-- Type? -->
-        <div class = "url">    {{  item.type   }}    </div>
+        <span class = "url">    {{  item.type   }}    </span>
         
         <!-- read only? -->
         {% if item.read_only == true %}
