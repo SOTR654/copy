@@ -111,16 +111,20 @@ layout: default
     "Sheet",
     "Spreadsheet"
   ]
+  function replaceWordsWithLinks(text) {
+    urls.forEach(word => {
+      const regex = new RegExp(`\\b${word}\\b`, 'g'); // Encuentra la palabra exacta
+      const link = `<a href="${base}${word}">${word}</a>`;
+      text = text.replace(regex, link); // Reemplaza la palabra por el hipervínculo
+    });
+    return text;
+  }
 
   //    Set urls
   document.querySelectorAll('.url').forEach(v => {
-    //let modifiedText = replaceWords(v.innerText);
-    if (urls.includes(v.innerText)){
-      v.innerHTML = '<code><a href="' + base + v.innerText + '">' + v.innerText + '</a></code>'
-    }
-    else{
-      v.innerHTML = '<code>' + v.innerText + '</code>'
-    }
+    let originalText = v.innerHTML;
+    let modifiedText = replaceWordsWithLinks(originalText);
+    v.innerHTML = '<code>' + modifiedText + '</code>'
   })
 </script>
 </body>
