@@ -8,27 +8,23 @@ layout: default
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
 <script>
   let dictionary = {
-    "Sheet":  "<code> Sheet </code>",
-    "string": "<code> string </code>",
-  }
 
-  window.onload = function(){
-    // Función para reemplazar palabras en un texto dado
-    function replaceWords(text) {
-      for (let word in dictionary) {
-        // Crea una expresión regular para encontrar la palabra
-        const regex = new RegExp(`\\b${word}\\b`, 'g');
-        // Reemplaza todas las ocurrencias de la palabra por el valor del diccionario
-        text = text.replace(regex, dictionary[word]);
-      }
-      return text;
+  }
+  function replaceWords(text) {
+    for (let word in dictionary) {
+      // Crea una expresión regular para encontrar la palabra
+      const regex = new RegExp(`\\b${word}\\b`, 'g');
+      // Reemplaza todas las ocurrencias de la palabra por el valor del diccionario
+      text = text.replace(regex, dictionary[word]);
     }
-
-    // Obtener el texto del elemento <h1>
-    const outputElement = document.getElementById('output');
-    const modifiedText = replaceWords(outputElement.innerText);
-    outputElement.innerText = modifiedText;
+    return text;
   }
+
+  const outputElements = document.querySelectorAll('.output');
+  outputElements.forEach(v => {
+    const modifiedText = replaceWords(v.innerText);
+    v.innerText = modifiedText;
+  });
 </script>
 
 
@@ -53,7 +49,9 @@ layout: default
       <!-- Description -->
       <div class = "info">
         <!-- Type? -->
-        <p id = "output">{{  item.type   }}<p>
+        <div class = "output">
+          <code>{{  item.type   }}</code>
+        </div>
         
         <!-- read only? -->
         {% if item.read_only == true %}
