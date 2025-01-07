@@ -7,33 +7,27 @@ layout: default
 
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
 <script>
-  function forReplace(){
+  let dictionary = {
+    " Sheet ": " <code> Sheet </code> ",
+  }
+
+  window.onload = function(){
     // Función para reemplazar palabras en un texto dado
-    function replaceWords(text, replacements) {
-        for (let word in replacements) {
-            const regex = new RegExp(`\\b${word}\\b`, 'g');
-            text = text.replace(regex, replacements[word]);
-        }
-        return text;
+    function replaceWords(text) {
+      for (let word in dictionary) {
+        // Crea una expresión regular para encontrar la palabra
+        const regex = new RegExp(`\\b${word}\\b`, 'g');
+        // Reemplaza todas las ocurrencias de la palabra por el valor del diccionario
+        text = text.replace(regex, dictionary[word]);
+      }
+      return text;
     }
 
     // Obtener el texto del elemento <h1>
     const outputElement = document.getElementById('output');
-    const initialText = outputElement.innerText;
-
-    // Palabras a reemplazar y sus reemplazos
-    const replacements = {
-        "sample": "example",
-        "replace": "substitute"
-    };
-
-    // Llamada a la función para reemplazar palabras
-    const modifiedText = replaceWords(initialText, replacements);
-
-    // Actualizar el contenido del elemento <h1> con el texto modificado
+    const modifiedText = replaceWords(outputElement.innerText);
     outputElement.innerText = "a" + modifiedText;
   }
-  window.onload = forReplace;
 </script>
 
 
@@ -57,18 +51,9 @@ layout: default
 
       <!-- Description -->
       <div class="info" id = "output">
-        FUNCION
-      </div>
-      
-      <div class="info">
         <!-- Type? -->
-        {% assign text = "<code>" | append: item.type | append: "</code>" %}
-        {% if link_list contains item.type %}
-          <a href={{ base | append: item.type }}>{{text}}</a>
-        {% else %}
-          {{text}}
-        {% endif %}
-
+        {{  item.type   }}
+        
         <!-- read only? -->
         {% if item.read_only == true %}
           <code><span style='color:red'>read-only</span></code>
