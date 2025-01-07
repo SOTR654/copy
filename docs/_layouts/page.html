@@ -39,7 +39,7 @@ layout: default
 
       <!-- Description -->
       <div class = "info">
-        <code><span class = "url">    {{  item.type   }}    </span></code>
+        <span class = "full_url">    {{  item.type   }}    </span>
         
         <!-- read only? -->
         {% if item.read_only == true %} 
@@ -48,7 +48,7 @@ layout: default
         <br>
 
         <!-- text -->
-        <span class = "url">    {{  item.description   }}    </span>
+        <span class = "description">    {{  item.description   }}    </span>
        </div>
       <br>
     {% endfor %}
@@ -65,15 +65,15 @@ layout: default
       <h2> {{  item.name  }} </h2>
       
       <!-- Description -->
-      <span class = "url">    {{  item.description   }}    </span>
+      <span class = "description">    {{  item.description   }}    </span>
       <br>
 
       <!-- Parameters -->
       <div class="top"> Parameters </div>
       {% for v in item.parameters %}
         <div class="info">
-          <code><span class = "url">    {{  v.type   }}    </span></code>
-          <br><span class = "url">    {{  v.description   }}    </span>
+          <span class = "full_url">    {{  v.type   }}    </span>
+          <br><span class = "description">    {{  v.description   }}    </span>
         </div>
       {% else %}
         <div class="info">    <code>void</code>    </div>
@@ -83,8 +83,8 @@ layout: default
       <div class="top"> Returns </div>
       {% for v in item.returns %}
         <div class="info">
-          <code><span class = "url">    {{  v.type   }}    </span></code>
-          <br><span class = "url">    {{  v.description   }}    </span>
+          <span class = "full_url">    {{  v.type   }}    </span>
+          <br><span class = "description">    {{  v.description   }}    </span>
         </div>
       {% else %}
         <div class="info">    <code>void</code>    </div>
@@ -111,8 +111,21 @@ layout: default
   }
 
   //    Set urls
-  document.querySelectorAll('.url').forEach(v => {
-    v.innerHTML = replaceWordsWithLinks(v.innerHTML)
+  document.querySelectorAll('.full_url').forEach(v => {
+    let text = v.innerHTML
+    for (let i in urls){
+      let u = urls[i]
+      text = text.replace(u, `<span class = "url">  <a href="${base}${u}">${u}</a>  </span>`)
+    }
+    v.innerHTML = "<code>" + text + "</code>"
+  })
+  document.querySelectorAll('.description').forEach(v => {
+    let text = v.innerHTML
+    for (let i in urls){
+      let u = urls[i]
+      text = text.replace(u, `<span class = "url">  <a href="${base}${u}">${u}</a>  </span>`)
+    }
+    v.innerHTML = text
   })
 </script>
 </body>
