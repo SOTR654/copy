@@ -6,22 +6,6 @@ layout: default
 {% assign base = "https://sotr654.github.io/copy/Objects/" %}
 
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
-<script>
-  let base = "https://sotr654.github.io/copy/Objects/"
-  let urls = [
-    "GoogleSheets",
-    "Sheet",
-    "Spreadsheet"
-  ]
-
-  //    Set urls
-  document.querySelectorAll('.url').forEach(v => {
-    //let modifiedText = replaceWords(v.innerText);
-    if (urls.includes(v.innerText)){
-      v.innerHTML = '<code><a href="' + base + v.innerText + '">' + v.innerText + '</a></code>'
-    }
-  })
-</script>
 
 
 <body>
@@ -118,4 +102,25 @@ layout: default
       <br>
     {% endfor %}
   </main>
+
+<!-- Code -->
+<script>
+  let base = "https://sotr654.github.io/copy/Objects/"
+  let urls = [
+    "GoogleSheets",
+    "Sheet",
+    "Spreadsheet"
+  ]
+
+  //    Set urls
+  document.querySelectorAll('.url').forEach(v => {
+    //let modifiedText = replaceWords(v.innerText);
+    if (urls.includes(v.innerText)){
+      v.innerHTML = '<code><a href="' + base + v.innerText + '">' + v.innerText + '</a></code>'
+    }
+    else{
+      v.innerHTML = '<code>' + v.innerText + '</code>'
+    }
+  })
+</script>
 </body>
