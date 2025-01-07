@@ -6,8 +6,35 @@ layout: default
 {% assign base = "https://sotr654.github.io/copy/Objects/" %}
 
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
-<script src="js/code.js" defer></script>
+<script>
+  function forReplace(){
+    // Función para reemplazar palabras en un texto dado
+    function replaceWords(text, replacements) {
+        for (let word in replacements) {
+            const regex = new RegExp(`\\b${word}\\b`, 'g');
+            text = text.replace(regex, replacements[word]);
+        }
+        return text;
+    }
 
+    // Obtener el texto del elemento <h1>
+    const outputElement = document.getElementById('output');
+    const initialText = outputElement.innerText;
+
+    // Palabras a reemplazar y sus reemplazos
+    const replacements = {
+        "sample": "example",
+        "replace": "substitute"
+    };
+
+    // Llamada a la función para reemplazar palabras
+    const modifiedText = replaceWords(initialText, replacements);
+
+    // Actualizar el contenido del elemento <h1> con el texto modificado
+    outputElement.innerText = "a" + modifiedText;
+  }
+  window.onload = forReplace;
+</script>
 
 
 <body>
@@ -29,8 +56,8 @@ layout: default
       <div class="top">    {{  item.name  }}    </div>
 
       <!-- Description -->
-      <div class="info">
-        <h1 id="output"> {{ text }} </h1>
+      <div class="info" id = "output">
+        FUNCION
       </div>
       
       <div class="info">
