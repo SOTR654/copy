@@ -28,8 +28,7 @@ layout: default
 
       <!-- Description -->
       <div class = "info">
-        <!-- Type? -->
-        <span class = "url">    {{  item.type   }}    </span>
+        <code><span class = "url">    {{  item.type   }}    </span></code>
         
         <!-- read only? -->
         {% if item.read_only == true %}
@@ -38,11 +37,7 @@ layout: default
         <br>
 
         <!-- text -->
-        {{
-          item.description
-          | replace: " string ", ' <code>string</code> '
-          | replace: " Sheet ", ' <code>Sheet</code> '
-        }}
+        <span class = "url">    {{  item.description   }}    </span>
        </div>
       <br>
     {% endfor %}
@@ -59,26 +54,15 @@ layout: default
       <h2> {{  item.name  }} </h2>
       
       <!-- Description -->
-      {{item.description}}
+      <span class = "url">    {{  item.description   }}    </span>
       <br>
 
       <!-- Parameters -->
       <div class="top"> Parameters </div>
       {% for v in item.parameters %}
         <div class="info">
-          {% assign text = "<code>" | append: v.type | append: "</code>" %}
-          {% if link_list contains v.type %}
-            <b>{{ v.name  }}:</b> <a href={{ base | append: v.type}}>{{text}}</a>
-          {% else %}
-            <b>{{ v.name  }}:</b> {{text}}
-          {% endif %}
-
-          <!-- Description -->
-          <br>{{
-            v.description
-            | replace: " string ", ' <code>string</code> '
-            | replace: " Sheet ", ' <code>Sheet</code> '
-          }}
+          <code><span class = "url">    {{  item.type   }}    </span></code>
+          <br><span class = "url">    {{  v.description   }}    </span>
         </div>
       {% else %}
         <div class="info">    <code>void</code>    </div>
@@ -88,13 +72,8 @@ layout: default
       <div class="top"> Returns </div>
       {% for v in item.returns %}
         <div class="info">
-            {% assign text = "<code>" | append: v.type | append: "</code>" %}
-            {% if link_list contains v.type %}
-              <a href={{ base | append: v.type}}>{{text}}</a>
-            {% else %}
-              {{text}}
-            {% endif %}
-          <br>{{  v.description }}
+          <code><span class = "url">    {{  item.type   }}    </span></code>
+          <br><span class = "url">    {{  v.description   }}    </span>
         </div>
       {% else %}
         <div class="info">    <code>void</code>    </div>
@@ -109,7 +88,8 @@ layout: default
   let urls = [
     "GoogleSheets",
     "Sheet",
-    "Spreadsheet"
+    "Spreadsheet",
+    "Cell"
   ]
   function replaceWordsWithLinks(text) {
     urls.forEach(word => {
@@ -124,7 +104,7 @@ layout: default
   document.querySelectorAll('.url').forEach(v => {
     let originalText = v.innerHTML;
     let modifiedText = replaceWordsWithLinks(originalText);
-    v.innerHTML = '<code>' + modifiedText + '</code>'
+    v.innerHTML = modifiedText
   })
 </script>
 </body>
