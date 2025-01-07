@@ -92,19 +92,16 @@ layout: default
     "Cell"
   ]
   function replaceWordsWithLinks(text) {
-    urls.forEach(word => {
-      const regex = new RegExp(`\\b${word}\\b`, 'g'); // Encuentra la palabra exacta
-      const link = `<a href="${base}${word}">${word}</a>`;
-      text = text.replace(regex, link); // Reemplaza la palabra por el hipervínculo
-    });
+    for (let i in urls){
+      let u = urls[i]
+      text.replace(u, `<a href="${base}${u}">${u}</a>`)
+    }
     return text;
   }
 
   //    Set urls
   document.querySelectorAll('.url').forEach(v => {
-    let originalText = v.innerHTML;
-    let modifiedText = replaceWordsWithLinks(originalText);
-    v.innerHTML = modifiedText
+    v.innerHTML = replaceWordsWithLinks(v.innerHTML)
   })
 </script>
 </body>
