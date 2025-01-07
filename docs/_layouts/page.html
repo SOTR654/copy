@@ -115,9 +115,9 @@ layout: default
     let text = v.innerHTML
     for (let i in urls){
       let u = urls[i]
-      text = text.replace(u, `<span class = "url">  <a href="${base}${u}">${u}</a>  </span>`)
+      text = text.replace(u, `<a href="${base}${u}">${u}</a>`)
     }
-    v.innerHTML = "<code>" + text + "</code>"
+    v.innerHTML = '<span class = "url">  ' + text + "  </span>"
   })
   document.querySelectorAll('.description').forEach(v => {
     let text = v.innerHTML
