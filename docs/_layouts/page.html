@@ -7,6 +7,17 @@ layout: default
 
 {% assign link_list = "Sheet,GoogleSheets,Spreadsheet,Sheet" | split: "," %}
 
+<style>
+  .read-only {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: red;
+  }
+  .url {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+</style> 
+
+
 
 <body>
   <header>
@@ -31,13 +42,7 @@ layout: default
         <code><span class = "url">    {{  item.type   }}    </span></code>
         
         <!-- read only? -->
-        {% if item.read_only == true %}
-          <style>
-            .read-only {
-              background-color: rgba(255, 255, 255, 0.9);
-              color: red;
-            }
-          </style>        
+        {% if item.read_only == true %} 
           <code><span class="read-only">read-only</span></code>
         {% endif %}
         <br>
