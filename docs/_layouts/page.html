@@ -49,12 +49,16 @@ layout: default
         {% endif %}
         <br>
 
-        <!-- text -->
-        <span class = "no_url">    {{  item.description   }}    </span>
-
         <!-- description list -->
         {% if item.description_list.size > 0 %}
+          <!-- text -->
           <ul style="padding: 0; list-style-type: none;">
+            <li>
+              <span class = "no_url">    {{  item.description   }}    </span>
+              <br>
+            </li>
+
+            <!-- List -->
             {% for l in item.description_list %}
               <li>
                 <b>{{l.name}}:</b> <code>{{l.type}}</code>
@@ -63,6 +67,8 @@ layout: default
               </li>
             {% endfor %}
           </ul>
+        {% else %}
+          <span class = "no_url">    {{  item.description   }}    </span>
         {% endif %}
        </div>
       <br>
