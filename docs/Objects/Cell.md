@@ -19,23 +19,23 @@ properties:
     read_only: true
 
   - name: data
-    type: "{value: string}"
+    type: "Dictionary"
     description: 'Current cell information:
      <ul style="padding: 0; list-style-type: none;">
         <li>
             <b>value:</b> <code>string</code>
             <br> Cell value
-            <br> <br>
+            <br>
         </li>
         <li>
             <b>formula:</b> <code>string</code>
             <br> Cell formula
-            <br> <br>
+            <br>
         </li>
         <li>
             <b>background_color:</b> <code>string</code>
             <br> Background color in HEX format.
-            <br> <br>
+            <br>
         </li>
         <li>
             <b>background_text:</b> <code>string</code>
@@ -45,7 +45,7 @@ properties:
     read_only: true
 
   - name: cloud
-    type: "{value: string}"
+    type: "Dictionary"
     description: "Same information as <code>data</code>, it's the current data of the file in the cloud, all its values ​​cannot be edited."
     read_only: true
 
