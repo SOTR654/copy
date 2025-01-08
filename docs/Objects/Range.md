@@ -1,6 +1,6 @@
 ---
 layout: page
-description: Focused on a Cell object.
+description: Focused on a Range object.
 
 properties:
   - name: Parent
