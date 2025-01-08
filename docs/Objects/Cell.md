@@ -15,7 +15,14 @@ properties:
 
   - name: data
     type: "{value: string|number}"
-    description: "Current cell information:<br><b>value:</b> string<br>Cell content."
+    description: '
+    Current cell information: <ul>
+      <li>value: string
+        <ul style="list-style-type: none; padding-left: 15px;">
+          <li>Cell content</li>
+        </ul>
+      </li>
+    </ul>'
     read_only: true
 
   - name: cloud
