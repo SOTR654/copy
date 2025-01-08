@@ -20,7 +20,28 @@ properties:
 
   - name: data
     type: "{value: string}"
-    description: Current cell information.
+    description: 'Current cell information:
+     <ul style="padding: 0; list-style-type: none;">
+        <li>
+            <b>value:</b> <code>string</code>
+            <br> Cell value
+            <br> <br>
+        </li>
+        <li>
+            <b>formula:</b> <code>string</code>
+            <br> Cell formula
+            <br> <br>
+        </li>
+        <li>
+            <b>background_color:</b> <code>string</code>
+            <br> Background color in HEX format.
+            <br> <br>
+        </li>
+        <li>
+            <b>background_text:</b> <code>string</code>
+            <br> Text color in HEX format.
+        </li>
+    </ul>'
     read_only: true
 
   - name: cloud
