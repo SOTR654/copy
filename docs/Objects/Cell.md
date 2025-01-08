@@ -16,12 +16,10 @@ properties:
   - name: data
     type: "{value: string|number}"
     description: '
-    Current cell information: <ul>
-      <li>value: string
-        <ul style="list-style-type: none; padding-left: 15px;">
-          <li>Cell content</li>
-        </ul>
-      </li>
+    Current cell information:
+      <ul style="list-style-type: none; padding-left: 15px;">
+      <li>value: string</li>
+      <li>Cell content</li>
     </ul>'
     read_only: true
 
