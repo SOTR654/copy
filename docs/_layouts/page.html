@@ -51,6 +51,19 @@ layout: default
 
         <!-- text -->
         <span class = "no_url">    {{  item.description   }}    </span>
+
+        <!-- description list -->
+        {% if page.description_list.size > 0 %}
+          <ul style="padding: 0; list-style-type: none;">
+            {% for l in page.description_list %}
+              <li>
+                <b>{{l.name}}:</b> <code>{{l.type}}</code>
+                <br> {{l.text}}
+                <br>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
        </div>
       <br>
     {% endfor %}
@@ -74,7 +87,7 @@ layout: default
       <div class="top"> Parameters </div>
       {% for v in item.parameters %}
         <div class="info">
-          <b>{{v.name}}</b> <span class = "full_url">    {{  v.type   }}    </span>
+          <b>{{v.name}}:</b> <span class = "full_url">    {{  v.type   }}    </span>
           <br><span class = "no_url">    {{  v.description   }}    </span>
         </div>
       {% else %}
