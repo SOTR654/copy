@@ -53,9 +53,9 @@ layout: default
         <span class = "no_url">    {{  item.description   }}    </span>
 
         <!-- description list -->
-        {% if page.description_list.size > 0 %}
+        {% if item.description_list.size > 0 %}
           <ul style="padding: 0; list-style-type: none;">
-            {% for l in page.description_list %}
+            {% for l in item.description_list %}
               <li>
                 <b>{{l.name}}:</b> <code>{{l.type}}</code>
                 <br> {{l.text}}
