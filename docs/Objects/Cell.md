@@ -13,13 +13,18 @@ properties:
     description: ID in A1 format of the cell position.
     read_only: true
 
+  - name: Pos
+    type: Vector2
+    description: Position of the cell.
+    read_only: true
+
   - name: data
-    type: "{value: string|number}"
+    type: "{value: string}"
     description: Current cell information.
     read_only: true
 
   - name: cloud
-    type: "{value: string|number}"
+    type: "{value: string}"
     description: "Same information as <code>data</code>, it's the current data of the file in the cloud, all its values ​​cannot be edited."
     read_only: true
 

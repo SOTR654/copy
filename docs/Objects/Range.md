@@ -5,22 +5,12 @@ description: Focused on a Range object.
 properties:
   - name: Parent
     type: Sheet
-    description: Page that created this cell.
+    description: Page that created this range.
     read_only: true
 
-  - name: ID
-    type: string
-    description: ID in A1 format of the cell position.
-    read_only: true
-
-  - name: data
-    type: "{value: string|number}"
-    description: Current cell information.
-    read_only: true
-
-  - name: cloud
-    type: "{value: string|number}"
-    description: "Same information as <code>data</code>, it's the current data of the file in the cloud, all its values ​​cannot be edited."
+  - name: List
+    type: "{[string]: Cell}"
+    description: Dictionary with all cells, you cannot add or remove cells.
     read_only: true
 
 methods:

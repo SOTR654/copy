@@ -13,8 +13,8 @@ properties:
     read_only: true
 
   - name: Cache
-    type: "{{Cell}}"
-    description: List with lists containing the data for each cell.
+    type: "{{value: string}}"
+    description: List containing the information of all cells.
     read_only: true
 
   - name: Changes
@@ -34,6 +34,19 @@ methods:
       - name: Cell
         type: string
         description: Cell name in A1 format.
+    returns:
+      - type: Cell
+        description: Requested cell.
+        
+  - name: GetCellByPos
+    description: Returns the requested cell.
+    parameters:
+      - name: x
+        type: number
+        description: Column.
+      - name: y
+        type: number
+        description: Row.
     returns:
       - type: Cell
         description: Requested cell.
