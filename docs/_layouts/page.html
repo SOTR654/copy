@@ -44,7 +44,7 @@ layout: default
         <br>
 
         <!-- text -->
-        <span class = "description">    {{  item.description   }}    </span>
+        <span class = "no_url">    {{  item.description   }}    </span>
        </div>
       <br>
     {% endfor %}
@@ -61,7 +61,7 @@ layout: default
       <h2> {{  item.name  }} </h2>
       
       <!-- Description -->
-      <span class = "description">    {{  item.description   }}    </span>
+      <span class = "no_url">    {{  item.description   }}    </span>
       <br>
 
       <!-- Parameters -->
@@ -69,7 +69,7 @@ layout: default
       {% for v in item.parameters %}
         <div class="info">
           <span class = "full_url">    {{  v.type   }}    </span>
-          <br><span class = "description">    {{  v.description   }}    </span>
+          <br><span class = "no_url">    {{  v.description   }}    </span>
         </div>
       {% else %}
         <div class="info">    <code>void</code>    </div>
@@ -80,7 +80,7 @@ layout: default
       {% for v in item.returns %}
         <div class="info">
           <span class = "full_url">    {{  v.type   }}    </span>
-          <br><span class = "description">    {{  v.description   }}    </span>
+          <br><span class = "no_url">    {{  v.description   }}    </span>
         </div>
       {% else %}
         <div class="info">    <code>void</code>    </div>
@@ -98,13 +98,6 @@ layout: default
     "Spreadsheet",
     "Cell"
   ]
-  function replaceWordsWithLinks(text) {
-    for (let i in urls){
-      let u = urls[i]
-      text = text.replace(u, `<a href="${base}${u}">${u}</a>`)
-    }
-    return text
-  }
 
   //    Set urls
   document.querySelectorAll('.full_url').forEach(v => {
@@ -120,14 +113,6 @@ layout: default
     for (let i in urls){
       let u = urls[i]
       text = text.replace(u, `<code>${u}</code>`)
-    }
-    v.innerHTML = text
-  })
-  document.querySelectorAll('.description').forEach(v => {
-    let text = v.innerHTML
-    for (let i in urls){
-      let u = urls[i]
-      text = text.replace(u, `<code>  <a href="${base}${u}">${u}</a>  </code>`)
     }
     v.innerHTML = text
   })
