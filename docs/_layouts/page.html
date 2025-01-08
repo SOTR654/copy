@@ -17,7 +17,7 @@ layout: default
 
 <body>
   <header>
-    {{ page.description }}
+    <span class = "no_url">    {{  page.description   }}    </span>
     <hr>
     <br>
   </header>
@@ -114,6 +114,14 @@ layout: default
       text = text.replace(u, `<a href="${base}${u}">${u}</a>`)
     }
     v.innerHTML = "<code>" + text + "</code>"
+  })
+  document.querySelectorAll('.no_url').forEach(v => {
+    let text = v.innerHTML
+    for (let i in urls){
+      let u = urls[i]
+      text = text.replace(u, `<code>${u}</code>`)
+    }
+    v.innerHTML = text
   })
   document.querySelectorAll('.description').forEach(v => {
     let text = v.innerHTML
