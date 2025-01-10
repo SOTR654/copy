@@ -5,11 +5,21 @@ layout: default
 
 <style>
   body {
-    display: flex;
     font-family: Arial, sans-serif;
   }
 
-  /*  sidebar  */
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  /* Main content */
+  .main-content {
+    width: 70%;
+    padding: 20px;
+  }
+
+  /* Sidebar */
   .sidebar {
     width: 30%;
     padding: 20px;
@@ -38,19 +48,14 @@ layout: default
     text-decoration: underline;
   }
 
-  /*  Others  */
-  .top_property {
+  /* Additional styles */
+  .top_property, .top {
     background-color: #3d3e41;
     color: white;
     padding: 10px 15px;
     font-weight: bold;
   }
-  .top {
-    background-color: #3d3e41;
-    color: white;
-    padding: 10px 15px;
-    font-weight: bold;
-  }
+  
   .info {
     padding: 10px 15px;
     color: white;
@@ -58,143 +63,143 @@ layout: default
 </style>
 
 <body>
-  <div style="width: 70%; padding: 20px;">
-    <span class="no_url"> {{ page.description }} </span>
-    <hr> <br>
+  <div class="container">
+    <div class="main-content">
+      <span class="no_url"> {{ page.description }} </span>
+      <hr> <br>
 
-    <!-- Properties - title -->
-    {% if page.properties.size > 0 %}
-      <h1> Properties </h3>
-    {% endif %}
+      <!-- Properties - title -->
+      {% if page.properties.size > 0 %}
+        <h1> Properties </h1>
+      {% endif %}
 
-    <!-- Properties - list -->
-    {% for item in page.properties %}
-      <!-- Title -->
-      <div class="top_properties"> {{ item.name }} </div>
+      <!-- Properties - list -->
+      {% for item in page.properties %}
+        <!-- Title -->
+        <div class="top_property"> {{ item.name }} </div>
 
-      <!-- Description -->
-      <div class="info">
-        <span class="full_url"> {{ item.type }} </span>
+        <!-- Description -->
+        <div class="info">
+          <span class="full_url"> {{ item.type }} </span>
 
-        <!-- read only? -->
-        {% if item.read_only == true %}
-        <code><span class="read-only">read-only</span></code>
-        {% endif %}
+          <!-- read only? -->
+          {% if item.read_only == true %}
+          <code><span class="read-only">read-only</span></code>
+          {% endif %}
+          <br>
+
+          <!-- text -->
+          <span class="no_url"> {{ item.description }} </span>
+        </div>
         <br>
-
-        <!-- text -->
-        <span class="no_url"> {{ item.description }} </span>
-      </div>
-      <br>
       {% endfor %}
-
 
       <!-- Methods - title -->
       {% if page.methods.size > 0 %}
-        <h1> Methods </h3>
+        <h1> Methods </h1>
       {% endif %}
 
       <!-- Methods - list -->
       {% for item in page.methods %}
         <!-- Title -->
-        <h2 class="top_methods"> {{  item.name  }} </h2>
+        <h2 class="top_methods"> {{ item.name }} </h2>
         
         <!-- Description -->
-        <span class = "no_url">    {{  item.description   }}    </span>
+        <span class="no_url"> {{ item.description }} </span>
         <br>
-  
+
         <!-- Parameters -->
         <div class="top"> Parameters </div>
         {% for v in item.parameters %}
           <div class="info">
-            <b>{{v.name}}:</b> <span class = "full_url">    {{  v.type   }}    </span>
-            <br><span class = "no_url">    {{  v.description   }}    </span>
+            <b>{{v.name}}:</b> <span class="full_url"> {{ v.type }} </span>
+            <br><span class="no_url"> {{ v.description }} </span>
           </div>
         {% else %}
-          <div class="info">    <code>void</code>    </div>
+          <div class="info"> <code>void</code> </div>
         {% endfor %}
         
         <!-- Returns -->
         <div class="top"> Returns </div>
         {% for v in item.returns %}
           <div class="info">
-            <span class = "full_url">    {{  v.type   }}    </span>
-            <br><span class = "no_url">    {{  v.description   }}    </span>
+            <span class="full_url"> {{ v.type }} </span>
+            <br><span class="no_url"> {{ v.description }} </span>
           </div>
         {% else %}
-          <div class="info">    <code>void</code>    </div>
+          <div class="info"> <code>void</code> </div>
         {% endfor %}
         <br>
       {% endfor %}
+    </div>
+
+    <div class="sidebar">
+      <ul id="sidebar-list"></ul>
+    </div>
   </div>
 
-  <div class="sidebar">
-    <ul id="sidebar-list"></ul>
-  </div>
+  <script>
+    let sidebarList = document.getElementById('sidebar-list');
+
+    // Properties
+    let properties = document.querySelectorAll('.top_property');
+    if (properties.length > 0) {
+      let propHeader = document.createElement('li');
+      propHeader.innerHTML = '<b>Properties</b>';
+      sidebarList.appendChild(propHeader);
+
+      // Add
+      properties.forEach(property => {
+        let li = document.createElement('li');
+        li.innerHTML = `<a href="#${property.id || property.textContent.trim()}">${property.textContent.trim()}</a>`;
+        sidebarList.appendChild(li);
+      });
+
+      // Separator
+      let hr = document.createElement('hr');
+      sidebarList.appendChild(hr);
+    }
+
+    // Methods
+    let methods = document.querySelectorAll('.top_methods');
+    if (methods.length > 0) {
+      let methHeader = document.createElement('li');
+      methHeader.innerHTML = '<b>Methods</b>';
+      sidebarList.appendChild(methHeader);
+
+      // Add
+      methods.forEach(method => {
+        let li = document.createElement('li');
+        li.innerHTML = `<a href="#${method.id || method.textContent.trim()}">${method.textContent.trim()}</a>`;
+        sidebarList.appendChild(li);
+      });
+    }
+
+    // Replace
+    let base = "https://sotr654.github.io/copy/Objects/";
+    let urls = [
+      "GoogleSheets",
+      "Sheet",
+      "Spreadsheet",
+      "Cell",
+      "Range",
+      "CellData"
+    ];
+    document.querySelectorAll('.full_url').forEach(v => {
+      let text = v.innerHTML;
+      for (let i in urls) {
+        let u = urls[i];
+        text = text.replace(u, `<a href="${base}${u}">${u}</a>`);
+      }
+      v.innerHTML = "<code>" + text + "</code>";
+    });
+    document.querySelectorAll('.no_url').forEach(v => {
+      let text = v.innerHTML;
+      for (let i in urls) {
+        let u = urls[i];
+        text = text.replace(u, `<code>${u}</code>`);
+      }
+      v.innerHTML = text;
+    });
+  </script>
 </body>
-<script>
-  let sidebarList = document.getElementById('sidebar-list');
-
-  // Properties
-  let properties = document.querySelectorAll('.top_property');
-  if (properties.length > 0) {
-    let propHeader = document.createElement('li');
-    propHeader.innerHTML = '<b>Properties</b>';
-    sidebarList.appendChild(propHeader);
-
-    // Add
-    properties.forEach(property => {
-      let li = document.createElement('li');
-      li.innerHTML = `<a href="#${property.id || property.textContent.trim()}">${property.textContent.trim()}</a>`;
-      sidebarList.appendChild(li);
-    });
-
-    // Separator
-    let hr = document.createElement('hr');
-    sidebarList.appendChild(hr);
-  }
-
-  // Methods
-  let methods = document.querySelectorAll('.top_methods');
-  if (methods.length > 0) {
-    let methHeader = document.createElement('li');
-    methHeader.innerHTML = '<b>Methods</b>';
-    sidebarList.appendChild(methHeader);
-
-    // Add
-    methods.forEach(method => {
-      let li = document.createElement('li');
-      li.innerHTML = `<a href="#${method.id || method.textContent.trim()}">${method.textContent.trim()}</a>`;
-      sidebarList.appendChild(li);
-    });
-  }
-
-
-  
-  //    Replace
-  let base = "https://sotr654.github.io/copy/Objects/"
-  let urls = [
-    "GoogleSheets",
-    "Sheet",
-    "Spreadsheet",
-    "Cell",
-    "Range",
-    "CellData"
-  ]
-  document.querySelectorAll('.full_url').forEach(v => {
-    let text = v.innerHTML
-    for (let i in urls){
-      let u = urls[i]
-      text = text.replace(u, `<a href="${base}${u}">${u}</a>`)
-    }
-    v.innerHTML = "<code>" + text + "</code>"
-  })
-  document.querySelectorAll('.no_url').forEach(v => {
-    let text = v.innerHTML
-    for (let i in urls){
-      let u = urls[i]
-      text = text.replace(u, `<code>${u}</code>`)
-    }
-    v.innerHTML = text
-  })
-</script>
