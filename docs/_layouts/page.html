@@ -4,9 +4,6 @@ layout: default
 <h3><a href="https://sotr654.github.io/copy/">Return to Main</a></h3>
 
 <style>
-  .read-only {
-    color: red;
-  }
   .top_properties {
     background-color: #3d3e41;
     color: white;
@@ -48,11 +45,6 @@ layout: default
       <!-- Description -->
       <div class = "info">
         <span class = "full_url">    {{  item.type   }}    </span>
-        
-        <!-- read only? -->
-        {% if item.read_only == true %} 
-          <code><span class="read-only">read-only</span></code>
-        {% endif %}
         <br>
 
         <!-- text -->
