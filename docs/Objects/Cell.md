@@ -18,36 +18,35 @@ properties:
     description: Position of the cell.
     read_only: true
 
-  - name: data
-    type: "Dictionary"
-    read_only: true
-    description: "Current cell information:"
-    description_list:
-      - name: value
-        type: string
-        text: Cell value.
-      - name: formula
-        type: string
-        text: Cell formula.
-      - name: background_color
-        type: string
-        text: Background color in HEX format.
-      - name: background_text
-        type: string
-        text: Text color in HEX format.
-
-  - name: cloud
-    type: "Dictionary"
-    description: "Same information as <code>data</code>, it's the current data of the file in the cloud, all its values ​​cannot be edited."
-    read_only: true
-
 methods:
+  - name: GetData
+    description: Returns a copy of the cell data.
+    parameters:
+      - name: mode
+        type: '"data"|"cloud"'
+        description: 'What type of data should be returned;
+    "cloud" refers only to data in the website file.
+    "data" refers to current data.'
+    returns:
+      - type: CellData
+        description: All the data contained in the cell.
+
   - name: SetValue
     description: Write the new value in <code>data</code> and add the cell to update.
     parameters:
       - name: value
         type: string|number
         description: New value.
+
+  - name: SetColor
+    description: Applies a color to the cell background or text.
+    parameters:
+      - name: mode 
+        type: '"background", "text"'
+        description: Color mode.
+      - name: value
+        type: string|Color3
+        description: Color in <code>Color3</code> or <code>HEX</code> format.
 
   - name: Clear
     description: Delete the data from the cell.

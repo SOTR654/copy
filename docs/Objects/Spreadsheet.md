@@ -9,8 +9,14 @@ properties:
     read_only: true
 
   - name: PagesData
-    type: Sheet
+    type: "{Sheet}"
     description: List of Sheet ordered by index that contains the file.
+    read_only: true
+
+  - name: Name
+    type: string
+    description: Current file name, modify it with <code>Rename</code>.
+    read_only: true
 
 methods:
   - name: OpenPage
@@ -33,10 +39,17 @@ methods:
       - type: Sheet
         description: Represents the requested page.
 
+  - name: Rename
+    description: This function will change the name of the file, the changes will be updated when using <code>SubmitFile</code>.
+    parameters:
+      - name: newName
+        type: string
+        description: New name.
+
   - name: RefreshFile
     description: Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
     
   - name: SubmitFile
-    description: Upload all the changes of all the pages to the file on the web.
+    description: Upload all the changes of all the pages to the file on the web (internal use parameter)
     
 ---
