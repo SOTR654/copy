@@ -2,7 +2,7 @@
 layout: home
 ---
 GoogleAPI is a module that allows you to make easy calls to Google APIs.
-All methods are <code style="color: red;">read-only</code>.
+<br>All methods are <code style="color: red;">read-only</code>.
 
 ## Supported services
 * [Google Sheets](./Objects/GoogleSheets.md)

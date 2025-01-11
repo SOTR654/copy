@@ -6,17 +6,14 @@ properties:
   - name: Parent
     type: Sheet
     description: Page that created this cell.
-    read_only: true
 
   - name: ID
     type: string
     description: ID in A1 format of the cell position.
-    read_only: true
 
   - name: Pos
     type: Vector2
     description: Position of the cell.
-    read_only: true
 
 methods:
   - name: GetData

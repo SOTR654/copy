@@ -5,27 +5,27 @@ description: Focused on a Sheet object.
 properties:
   - name: Name
     type: string
-    description: Page name.
+    description: Page name, modifiable through <code>Rename</code>
+
+  - name: Size
+    type: Vector2
+    description: Position of the farthest cell.
 
   - name: PageID
     type: number
     description: Positive integral number that represents the page, -1 if it is a temporary page.
-    read_only: true
 
-  - name: Cache
-    type: "{{value: string}}"
+  - name: Cells
+    type: "{{Cell}}"
     description: List containing the information of all cells.
-    read_only: true
-
-  - name: Changes
-    type: "{[string]: Cell}"
-    description: Dictionary that stores the changed cells.
-    read_only: true
 
   - name: Parent
     type: Spreadsheet
     description: Reference to the Spreadsheet that contains this page.
-    read_only: true
+
+  - name: isRemoved
+    type: boolean
+    description: Indicates if the page has been deleted, if the page was deleted you will not be able to modify the cells or any attributes of the page.
 
 methods:
   - name: GetCell
@@ -51,6 +51,12 @@ methods:
       - type: Cell
         description: Requested cell.
 
+  - name: GetAllCells
+    description: Returns a list with all the cells on the page.
+    returns:
+      - type: Range
+        description: Fixed range containing all cells.
+
   - name: GetRange
     description: Returns all cells between Start and End.
     parameters:
@@ -64,12 +70,6 @@ methods:
     returns:
       - type: Range
         description: Fixed range containing all cells between Start and End.
-
-  - name: GetAllCells
-    description: Returns a list with all the cells on the page.
-    returns:
-      - type: Range
-        description: Fixed range containing all cells.
     
   - name: ClonePage
     description: Create a new temporary page with all the current page data.
@@ -77,6 +77,16 @@ methods:
       - name: newName
         type: string?
         description: Name for the new page, otherwise it will use the name of the current page and a number will be added
+    
+  - name: RemovePage
+    description: Delete the page and make it read-only.
+    
+  - name: Rename
+    description: Replace the name of the page.
+    parameters:
+      - name: newName
+        type: string
+        description: New page name.
 
   - name: RefreshPage
     description: Replace all changes on this page in the file on the web, the Cell obtained will not be affected.

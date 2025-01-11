@@ -6,17 +6,14 @@ properties:
   - name: DocumentID
     type: string
     description: Stores the ID of the page that created it.
-    read_only: true
 
   - name: PagesData
     type: "{Sheet}"
     description: List of Sheet ordered by index that contains the file.
-    read_only: true
 
   - name: Name
     type: string
     description: Current file name, modify it with <code>Rename</code>.
-    read_only: true
 
 methods:
   - name: OpenPage

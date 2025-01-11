@@ -6,6 +6,5 @@ properties:
   - name: GoogleSheets
     type: "GoogleSheets"
     description: Property to access the GoogleSheets API.
-    read_only: true
 
 ---
