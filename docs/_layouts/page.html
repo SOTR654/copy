@@ -110,7 +110,11 @@ layout: default
     let text = v.innerHTML
     for (let i in urls){
       let u = urls[i]
+      if (!text.includes(u))  continue
+      
+      // Replace
       text = text.replace(u, base + u + '">${u}</a>')
+      break
     }
     v.innerHTML = "<code>" + text + "</code>"
   })
@@ -118,7 +122,11 @@ layout: default
     let text = v.innerHTML
     for (let i in urls){
       let u = urls[i]
-      text = text.replace(u, `<code>${u}</code>`)
+      if (!text.includes(u))  continue
+      
+      // Replace
+      text = text.replace(u, base + u + '">${u}</a>')
+      break
     }
     v.innerHTML = text
   })
