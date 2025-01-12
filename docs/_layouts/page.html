@@ -95,7 +95,7 @@ layout: default
 
 <!-- Code -->
 <script>
-  let base = "https://sotr654.github.io/copy/Objects/"
+  let base = '<a href="https://sotr654.github.io/copy/Objects/'
   let urls = [
     "GoogleSheets",
     "Sheet",
@@ -110,7 +110,7 @@ layout: default
     let text = v.innerHTML
     for (let i in urls){
       let u = urls[i]
-      text = text.replace(u, `<a href="${base}${u}">${u}</a>`)
+      text = text.replace(u, base + u + '">${u}</a>')
     }
     v.innerHTML = "<code>" + text + "</code>"
   })
