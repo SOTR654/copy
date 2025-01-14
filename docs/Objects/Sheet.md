@@ -23,9 +23,17 @@ properties:
     type: Spreadsheet
     description: Reference to the Spreadsheet that contains this page.
 
-  - name: isRemoved
+  - name: State
+    type: '"Removed"|"Empty"|"Ready"|"Updating"'
+    description: "According to the current task:
+    Removed: deleted page.
+    Empty: the page has no content.
+    Ready: the page has content and is ready to be used.
+    Updating: indicates that it is waiting for data from the api."
+
+  - name: isEmpty
     type: boolean
-    description: Indicates if the page has been deleted, if the page was deleted you will not be able to modify the cells or any attributes of the page.
+    description: Indicates if the page has content, useful to verify if <code>RefreshPage</code> worked.
 
 methods:
   - name: GetCell

@@ -95,40 +95,29 @@ layout: default
 
 <!-- Code -->
 <script>
-  let base = '<a href="https://sotr654.github.io/copy/Objects/'
+  let base = ' <a href="https://sotr654.github.io/copy/Objects/'
   let urls = [
-    "GoogleSheets",
-    "Sheet",
-    "Spreadsheet",
-    "Cell",
-    "Range",
-    "CellData"
+    " GoogleSheets ",
+    " Sheet ",
+    " Spreadsheet ",
+    " Cell ",
+    " Range ",
+    " CellData "
   ]
 
   //    Replace
-  document.querySelectorAll('.full_url').forEach(v => {
-    let text = v.innerHTML
+  function replace(text) {
     for (let i in urls){
       let u = urls[i]
-      if (!text.includes(u))  continue
-      
-      // Replace
-      text = text.replace(u, base + u + '">${u}</a>')
-      break
+      text = text.replace(u, ` <a href="https://sotr654.github.io/copy/Objects/${u}">${u}</a> `)
     }
-    v.innerHTML = "<code>" + text + "</code>"
+    return text
+  }
+  document.querySelectorAll('.full_url').forEach(v => {
+    v.innerHTML = "<code>" + replace(v.innerHTML) + "</code>"
   })
   document.querySelectorAll('.no_url').forEach(v => {
-    let text = v.innerHTML
-    for (let i in urls){
-      let u = urls[i]
-      if (!text.includes(u))  continue
-      
-      // Replace
-      text = text.replace(u, base + u + '">${u}</a>')
-      break
-    }
-    v.innerHTML = text
+    v.innerHTML = replace(v.innerHTML)
   })
   
 </script>

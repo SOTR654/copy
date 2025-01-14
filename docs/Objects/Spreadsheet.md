@@ -44,9 +44,9 @@ methods:
         description: New name.
 
   - name: RefreshFile
-    description: Replace all changes to all pages in the file on the web, the Cell obtained will not be affected.
+    description: It will delete all the pages and create new tables based on the file on the web, the previous pages will not be affected but they will not be able to be uploaded to the file.
     
   - name: SubmitFile
-    description: Upload all the changes of all the pages to the file on the web (internal use parameter)
+    description: It will upload the changed properties to the file on the web.
     
 ---

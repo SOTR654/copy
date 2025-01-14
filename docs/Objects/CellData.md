@@ -7,11 +7,11 @@ properties:
     type: string
     description: Cell value.
 
-  - name: background_color
+  - name: BackgroundColor
     type: string
     description: Background color in HEX format.
     
-  - name: background_text
+  - name: TextColor
     type: string
     description: Text color in HEX format.
 ---
