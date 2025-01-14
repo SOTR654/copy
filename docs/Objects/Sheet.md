@@ -31,10 +31,6 @@ properties:
     Ready: the page has content and is ready to be used.
     Updating: indicates that it is waiting for data from the api."
 
-  - name: isEmpty
-    type: boolean
-    description: Indicates if the page has content, useful to verify if <code>RefreshPage</code> worked.
-
 methods:
   - name: GetCell
     description: Returns the requested cell.
